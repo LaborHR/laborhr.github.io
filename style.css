@@ -1,124 +1,222 @@
-/* --- RESET & TIPOGRAFÍA --- */
+/* --- 1. RESET & TIPOGRAFÍA --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fdfdfd; }
+
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    color: #444; 
+    line-height: 1.6; 
+    background-color: #fdfdfd; 
+}
+
 ul { list-style: none; }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-/* --- PALETA CORPORATIVA --- */
+/* --- 2. PALETA DE COLORES LABOR HR --- */
 :root {
-    --navy: #0F1C2E;
-    --gold: #C5A059;
+    --navy: #0F1C2E;    /* Azul Corporativo */
+    --gold: #C5A059;    /* Dorado Premium */
     --white: #FFFFFF;
     --light-gray: #F4F6F8;
     --text-gray: #555555;
 }
 
-/* --- NAV --- */
+/* --- 3. NAVEGACIÓN --- */
 nav {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 0.8rem 5%; background: var(--navy); color: var(--white);
-    position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    height: 80px;
+    padding: 0 5%; 
+    background: var(--navy); 
+    height: 80px; /* Altura fija */
+    position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
 .logo-container { height: 100%; display: flex; align-items: center; }
-.logo-img { height: 55px; width: auto; }
+.logo-img { height: 50px; width: auto; } /* Ajuste de logo */
+
 .nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-links a { color: var(--white); font-weight: 500; font-size: 0.9rem; text-transform: uppercase; }
+.nav-links a { 
+    color: var(--white); 
+    font-weight: 500; 
+    font-size: 0.9rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
 .nav-links a:hover { color: var(--gold); }
-.btn-nav { border: 1px solid var(--gold); padding: 0.5rem 1.5rem; border-radius: 4px; color: var(--gold) !important; }
+
+.btn-nav { 
+    border: 1px solid var(--gold); 
+    padding: 0.6rem 1.5rem; 
+    border-radius: 4px; 
+    color: var(--gold) !important; 
+}
 .btn-nav:hover { background: var(--gold); color: var(--navy) !important; }
 
-/* --- HERO --- */
+/* --- 4. HERO SECTION (PORTADA) --- */
 .hero {
-    position: relative; height: 90vh;
+    position: relative;
     background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
-    display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 0 1rem;
+    height: 85vh; 
+    display: flex; align-items: center; justify-content: center; 
+    text-align: center; color: var(--white);
+    padding: 0 1rem;
 }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 28, 46, 0.85); }
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 28, 46, 0.85); /* Filtro Azul Oscuro */
+}
 .hero-content { position: relative; z-index: 2; max-width: 800px; }
-.tagline { color: var(--gold); font-weight: 600; letter-spacing: 3px; margin-bottom: 0.5rem; text-transform: uppercase; }
-.hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; }
-.hero .subtitle { font-size: 1.4rem; font-weight: 300; margin-bottom: 2rem; color: #ddd; }
-.hero .intro-text { font-weight: 300; font-size: 1.1rem; margin-bottom: 3rem; opacity: 0.9; }
-.btn-primary { background: var(--gold); color: var(--navy); padding: 1rem 2.5rem; font-weight: 700; border-radius: 4px; text-transform: uppercase; }
+
+.tagline { color: var(--gold); font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem; }
+.hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 1px; }
+.hero .subtitle { font-size: 1.3rem; font-weight: 300; margin-bottom: 2rem; color: #ddd; }
+.hero .intro-text { font-weight: 300; font-size: 1.1rem; margin-bottom: 3rem; opacity: 0.95; }
+
+.btn-primary { 
+    background: var(--gold); color: var(--navy); 
+    padding: 1rem 2.5rem; font-weight: 700; border-radius: 4px; 
+    text-transform: uppercase; box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
 .btn-primary:hover { background: #e0b86a; transform: translateY(-2px); }
 
-/* --- ADN (FIX DE ALINEACIÓN) --- */
-section { padding: 5rem 10%; }
+/* --- 5. SECCIONES GENERALES --- */
+section { padding: 5rem 8%; }
 .container { max-width: 1200px; margin: 0 auto; }
-.section-header { text-align: center; margin-bottom: 4rem; max-width: 800px; margin: 0 auto 4rem auto; }
+.section-header { text-align: center; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto; }
 h2 { font-size: 2.2rem; color: var(--navy); margin-bottom: 1rem; text-transform: uppercase; font-weight: 700; }
+.section-header p { color: var(--text-gray); font-size: 1.1rem; }
 
-.adn-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+/* --- 6. NUESTRO ADN --- */
+.adn-section { background: var(--white); }
+.adn-grid { 
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; 
+}
 .adn-card { 
     flex: 1 1 300px; max-width: 380px;
-    text-align: center; padding: 2.5rem; background: var(--white); border: 1px solid #eee; transition: 0.3s; border-bottom: 3px solid transparent;
+    text-align: center; padding: 2.5rem; 
+    background: var(--white); 
+    border: 1px solid #eee; border-bottom: 3px solid transparent;
+    transition: 0.3s;
 }
-.adn-card:hover { border-bottom-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.adn-card:hover { 
+    border-bottom-color: var(--gold); 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+}
 
-/* Alineación Perfecta de Íconos */
-.icon-wrapper { height: 70px; display: flex; align-items: flex-end; justify-content: center; margin-bottom: 1.5rem; }
+/* Alineación de Iconos y Títulos (ADN) */
+.icon-wrapper { 
+    height: 70px; /* Altura fija para alinear */
+    display: flex; align-items: flex-end; justify-content: center; 
+    margin-bottom: 1.5rem; 
+}
 .adn-card i { font-size: 2.5rem; color: var(--gold); }
 .adn-card h3 { color: var(--navy); margin-bottom: 1rem; font-size: 1.3rem; min-height: 3rem; display: flex; align-items: center; justify-content: center; }
 
-/* --- SERVICIOS (CENTRADO) --- */
+/* --- 7. SERVICIOS (PORTAFOLIO) --- */
 .services-section { background: var(--light-gray); }
-.services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; } /* Flexbox para centrar última fila */
+
+/* Flexbox para centrar tarjetas (incluso si son impares) */
+.services-grid { 
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; 
+}
 
 .service-card { 
-    flex: 1 1 320px; max-width: 450px; /* Tarjetas más anchas para caber la info robusta */
-    background: var(--white); padding: 3rem 2rem; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); transition: 0.3s; 
-    display: flex; flex-direction: column; align-items: center; /* Centrar todo el contenido de la tarjeta */
-    text-align: center;
+    flex: 1 1 320px; max-width: 450px; /* Tarjetas anchas pero controladas */
+    background: var(--white); padding: 3rem 2.5rem; 
+    border-radius: 6px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03); 
+    transition: 0.3s; 
+    display: flex; flex-direction: column; 
+    border-top: 4px solid var(--navy); /* Detalle elegante superior */
 }
-.service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-.service-card.highlight { border: 2px solid var(--gold); }
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-top-color: var(--gold); }
+.service-card.highlight { border: 2px solid var(--gold); } /* Destacar Seguridad */
 
+/* Centrado de Iconos y Títulos de Servicios */
 .icon-box { 
-    width: 70px; height: 70px; background: var(--navy); color: var(--white); 
-    display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 1.8rem; margin-bottom: 1.5rem; 
+    width: 70px; height: 70px; 
+    background: var(--navy); color: var(--white); 
+    display: flex; align-items: center; justify-content: center; 
+    border-radius: 50%; font-size: 1.8rem; margin: 0 auto 1.5rem auto; 
 }
-.service-card h3 { color: var(--navy); margin-bottom: 1rem; font-size: 1.3rem; font-weight: 700; }
-.service-card p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 1.5rem; }
+.service-card h3 { 
+    text-align: center; color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem; font-weight: 700; 
+}
+.service-card p { 
+    text-align: center; color: var(--text-gray); font-size: 0.95rem; margin-bottom: 2rem; 
+}
 
-.feature-list { text-align: left; width: 100%; margin-top: auto; padding-top: 1rem; border-top: 1px solid #eee; }
-.feature-list li { margin-bottom: 0.8rem; display: flex; align-items: flex-start; font-size: 0.9rem; color: #444; }
-.feature-list li i { color: var(--gold); margin-right: 10px; margin-top: 4px; min-width: 15px; }
+/* LISTAS DE CARACTERÍSTICAS (La corrección clave) */
+.feature-list {
+    text-align: left;
+    width: 100%;
+    margin-top: auto; /* Empuja la lista al fondo si hay espacio */
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
 
-/* --- FOOTER & CONTACTO --- */
+.feature-list li {
+    margin-bottom: 1rem;
+    display: flex;             /* Alineación flexible */
+    align-items: flex-start;   /* Icono arriba, texto fluye */
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.feature-list li i {
+    color: var(--gold);
+    margin-right: 12px;
+    min-width: 16px;           /* Evita que el texto se meta bajo el icono */
+    margin-top: 5px;           /* Ajuste óptico */
+}
+
+.feature-list li strong {
+    color: var(--navy);        /* Títulos en Azul */
+    font-weight: 700;
+    margin-right: 5px;         /* Aire después de los dos puntos */
+}
+
+/* --- 8. FOOTER & CONTACTO --- */
 footer { background: var(--navy); color: var(--white); padding: 5rem 10% 2rem 10%; }
 .footer-cta { text-align: center; margin-bottom: 3rem; }
-.footer-cta h2 { color: var(--gold); }
+.footer-cta h2 { color: var(--gold); margin-bottom: 1rem; }
+.footer-cta p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
 
+/* Tarjeta de Contacto Agrupada */
 .contact-card-wrapper { 
-    display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; align-items: center; 
-    background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4rem;
+    background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
 }
 
-.contact-info { text-align: left; min-width: 250px; }
-.contact-info h3 { font-size: 1.8rem; margin-bottom: 1rem; letter-spacing: 1px; }
-.contact-item { margin-bottom: 0.8rem; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+.contact-info { text-align: left; min-width: 280px; }
+.contact-info h3 { font-size: 1.8rem; margin-bottom: 1.5rem; letter-spacing: 1px; color: var(--white); }
+.contact-item { margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 12px; }
 .contact-item i { color: var(--gold); width: 20px; text-align: center; }
+.contact-item a:hover { color: var(--gold); }
 
 .btn-linkedin { 
-    display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; 
-    border: 1px solid var(--white); border-radius: 4px; font-size: 0.9rem; 
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 1.5rem; 
+    padding: 0.7rem 1.5rem; border: 1px solid var(--white); border-radius: 4px; font-size: 0.9rem; transition: 0.3s;
 }
 .btn-linkedin:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
 
-.qr-code { text-align: center; background: var(--white); padding: 10px; border-radius: 8px; }
-.qr-code img { width: 120px; height: 120px; display: block; margin-bottom: 5px; }
-.qr-code span { color: var(--navy); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
+/* Código QR */
+.qr-code { text-align: center; background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+.qr-code img { width: 140px; height: 140px; display: block; margin-bottom: 8px; }
+.qr-code span { color: var(--navy); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-.copyright { text-align: center; margin-top: 4rem; font-size: 0.8rem; opacity: 0.4; }
+.copyright { text-align: center; margin-top: 4rem; font-size: 0.8rem; opacity: 0.4; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
 
-/* --- MOBILE --- */
+/* --- 9. RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
+    .nav-links { display: none; } /* Ocultar menú en móvil */
     .hero h1 { font-size: 2.2rem; }
-    .hero .subtitle { font-size: 1.1rem; }
-    .contact-card-wrapper { flex-direction: column; text-align: center; }
+    .hero .subtitle { font-size: 1rem; }
+    section { padding: 4rem 5%; }
+    
+    .contact-card-wrapper { flex-direction: column; text-align: center; gap: 2rem; }
     .contact-info { text-align: center; }
     .contact-item { justify-content: center; }
 }
