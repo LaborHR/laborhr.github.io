@@ -1,178 +1,124 @@
 /* --- RESET & TIPOGRAFÍA --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
-body { 
-    font-family: 'Montserrat', sans-serif; 
-    color: #333; 
-    line-height: 1.6; 
-    background-color: #fdfdfd;
-}
-
+body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fdfdfd; }
 ul { list-style: none; }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-/* --- PALETA DE COLORES LABOR HR --- */
+/* --- PALETA CORPORATIVA --- */
 :root {
-    --navy: #0F1C2E;     /* Azul oscuro corporativo */
-    --gold: #C5A059;     /* Dorado premium */
+    --navy: #0F1C2E;
+    --gold: #C5A059;
     --white: #FFFFFF;
     --light-gray: #F4F6F8;
     --text-gray: #555555;
 }
 
-/* --- NAVEGACIÓN --- */
+/* --- NAV --- */
 nav {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 1rem 5%; 
-    background: var(--navy); 
-    color: var(--white);
-    position: sticky; top: 0; z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    height: 80px; /* Altura fija para controlar el logo */
+    padding: 0.8rem 5%; background: var(--navy); color: var(--white);
+    position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    height: 80px;
 }
-
-/* Ajuste del Logo */
-.logo-container { display: flex; align-items: center; height: 100%; }
-.logo-img {
-    height: 55px; /* Altura controlada para que no se deforme */
-    width: auto;  /* El ancho se ajusta solo */
-    display: block;
-}
-
-.nav-links { display: flex; gap: 2.5rem; align-items: center; }
-.nav-links a { 
-    color: var(--white); 
-    font-weight: 500; 
-    font-size: 0.9rem; 
-    text-transform: uppercase; 
-    letter-spacing: 0.5px;
-}
+.logo-container { height: 100%; display: flex; align-items: center; }
+.logo-img { height: 55px; width: auto; }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { color: var(--white); font-weight: 500; font-size: 0.9rem; text-transform: uppercase; }
 .nav-links a:hover { color: var(--gold); }
+.btn-nav { border: 1px solid var(--gold); padding: 0.5rem 1.5rem; border-radius: 4px; color: var(--gold) !important; }
+.btn-nav:hover { background: var(--gold); color: var(--navy) !important; }
 
-.btn-nav { 
-    border: 1px solid var(--gold); 
-    padding: 0.6rem 1.5rem; 
-    border-radius: 4px; 
-    color: var(--gold) !important; 
-}
-.btn-nav:hover { 
-    background: var(--gold); 
-    color: var(--navy) !important; 
-}
-
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 .hero {
-    position: relative;
-    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-    background-size: cover; background-position: center;
-    height: 90vh; 
-    display: flex; align-items: center; justify-content: center; 
-    text-align: center; color: var(--white);
-    padding: 0 1rem;
+    position: relative; height: 90vh;
+    background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 0 1rem;
 }
-.hero-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(15, 28, 46, 0.85); /* Capa azul sobre la foto */
-}
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 28, 46, 0.85); }
 .hero-content { position: relative; z-index: 2; max-width: 800px; }
-
 .tagline { color: var(--gold); font-weight: 600; letter-spacing: 3px; margin-bottom: 0.5rem; text-transform: uppercase; }
-.hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 1px; }
+.hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; }
 .hero .subtitle { font-size: 1.4rem; font-weight: 300; margin-bottom: 2rem; color: #ddd; }
-.hero .intro-text { font-weight: 300; font-size: 1.1rem; line-height: 1.8; margin-bottom: 3rem; opacity: 0.9; }
-
-.btn-primary { 
-    background: var(--gold); 
-    color: var(--navy); 
-    padding: 1rem 2.5rem; 
-    font-weight: 700; 
-    border-radius: 4px; 
-    text-transform: uppercase; 
-    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
-}
+.hero .intro-text { font-weight: 300; font-size: 1.1rem; margin-bottom: 3rem; opacity: 0.9; }
+.btn-primary { background: var(--gold); color: var(--navy); padding: 1rem 2.5rem; font-weight: 700; border-radius: 4px; text-transform: uppercase; }
 .btn-primary:hover { background: #e0b86a; transform: translateY(-2px); }
 
-/* --- SECCIONES GENERALES --- */
+/* --- ADN (FIX DE ALINEACIÓN) --- */
 section { padding: 5rem 10%; }
 .container { max-width: 1200px; margin: 0 auto; }
-.section-header { text-align: center; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+.section-header { text-align: center; margin-bottom: 4rem; max-width: 800px; margin: 0 auto 4rem auto; }
 h2 { font-size: 2.2rem; color: var(--navy); margin-bottom: 1rem; text-transform: uppercase; font-weight: 700; }
-.section-header p { color: var(--text-gray); font-size: 1.1rem; }
 
-/* --- ADN SECTION --- */
-.adn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.adn-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
 .adn-card { 
-    text-align: center; padding: 2.5rem; 
-    background: var(--white); 
-    border: 1px solid #eee; 
-    border-bottom: 3px solid transparent;
-    transition: 0.3s;
+    flex: 1 1 300px; max-width: 380px;
+    text-align: center; padding: 2.5rem; background: var(--white); border: 1px solid #eee; transition: 0.3s; border-bottom: 3px solid transparent;
 }
 .adn-card:hover { border-bottom-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.adn-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 1.5rem; }
-.adn-card h3 { color: var(--navy); margin-bottom: 1rem; font-size: 1.3rem; }
-.adn-card p { font-size: 0.95rem; color: var(--text-gray); }
 
-/* --- SERVICIOS --- */
+/* Alineación Perfecta de Íconos */
+.icon-wrapper { height: 70px; display: flex; align-items: flex-end; justify-content: center; margin-bottom: 1.5rem; }
+.adn-card i { font-size: 2.5rem; color: var(--gold); }
+.adn-card h3 { color: var(--navy); margin-bottom: 1rem; font-size: 1.3rem; min-height: 3rem; display: flex; align-items: center; justify-content: center; }
+
+/* --- SERVICIOS (CENTRADO) --- */
 .services-section { background: var(--light-gray); }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; } /* Flexbox para centrar última fila */
 
 .service-card { 
-    background: var(--white); padding: 3rem 2rem; 
-    border-radius: 4px; 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03); 
-    transition: 0.3s; 
-    position: relative; overflow: hidden;
+    flex: 1 1 320px; max-width: 450px; /* Tarjetas más anchas para caber la info robusta */
+    background: var(--white); padding: 3rem 2rem; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); transition: 0.3s; 
+    display: flex; flex-direction: column; align-items: center; /* Centrar todo el contenido de la tarjeta */
+    text-align: center;
 }
 .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-
-.service-card.highlight { border: 2px solid var(--gold); } /* Destacar Seguridad */
+.service-card.highlight { border: 2px solid var(--gold); }
 
 .icon-box { 
-    width: 60px; height: 60px; 
-    background: var(--navy); color: var(--white); 
-    display: flex; align-items: center; justify-content: center; 
-    border-radius: 50%; font-size: 1.4rem; margin-bottom: 1.5rem; 
+    width: 70px; height: 70px; background: var(--navy); color: var(--white); 
+    display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 1.8rem; margin-bottom: 1.5rem; 
 }
-.service-card h3 { color: var(--navy); margin-bottom: 1rem; font-size: 1.25rem; font-weight: 700; }
-.service-card p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 1.5rem; min-height: 80px; }
+.service-card h3 { color: var(--navy); margin-bottom: 1rem; font-size: 1.3rem; font-weight: 700; }
+.service-card p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 1.5rem; }
 
-.feature-list li { 
-    font-size: 0.9rem; color: #444; margin-bottom: 0.8rem; display: flex; align-items: flex-start; 
+.feature-list { text-align: left; width: 100%; margin-top: auto; padding-top: 1rem; border-top: 1px solid #eee; }
+.feature-list li { margin-bottom: 0.8rem; display: flex; align-items: flex-start; font-size: 0.9rem; color: #444; }
+.feature-list li i { color: var(--gold); margin-right: 10px; margin-top: 4px; min-width: 15px; }
+
+/* --- FOOTER & CONTACTO --- */
+footer { background: var(--navy); color: var(--white); padding: 5rem 10% 2rem 10%; }
+.footer-cta { text-align: center; margin-bottom: 3rem; }
+.footer-cta h2 { color: var(--gold); }
+
+.contact-card-wrapper { 
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; align-items: center; 
+    background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
 }
-.feature-list li i { color: var(--gold); margin-right: 10px; margin-top: 4px; font-size: 0.8rem; }
 
-/* --- FOOTER --- */
-footer { background: var(--navy); color: var(--white); padding: 5rem 10% 2rem 10%; text-align: center; }
-.footer-cta { margin-bottom: 4rem; }
-.footer-cta h2 { color: var(--gold); margin-bottom: 1rem; }
-.footer-cta p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+.contact-info { text-align: left; min-width: 250px; }
+.contact-info h3 { font-size: 1.8rem; margin-bottom: 1rem; letter-spacing: 1px; }
+.contact-item { margin-bottom: 0.8rem; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+.contact-item i { color: var(--gold); width: 20px; text-align: center; }
 
-.contact-details { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-.btn-gold { 
-    border: 2px solid var(--gold); color: var(--gold); 
-    padding: 0.8rem 2.5rem; font-weight: 600; text-transform: uppercase; 
-    display: inline-block; 
+.btn-linkedin { 
+    display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; 
+    border: 1px solid var(--white); border-radius: 4px; font-size: 0.9rem; 
 }
-.btn-gold:hover { background: var(--gold); color: var(--navy); }
+.btn-linkedin:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
 
-.phone-number { font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
-.phone-number i { color: #25D366; } /* Verde WhatsApp */
+.qr-code { text-align: center; background: var(--white); padding: 10px; border-radius: 8px; }
+.qr-code img { width: 120px; height: 120px; display: block; margin-bottom: 5px; }
+.qr-code span { color: var(--navy); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
 
-.footer-sign { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 3rem; }
-.footer-sign h3 { font-size: 1.4rem; letter-spacing: 1px; }
-.footer-sign p { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; }
-.social-links a { color: var(--white); font-size: 1rem; opacity: 0.8; }
-.social-links a:hover { opacity: 1; color: var(--gold); }
+.copyright { text-align: center; margin-top: 4rem; font-size: 0.8rem; opacity: 0.4; }
 
-.copyright { margin-top: 4rem; font-size: 0.8rem; opacity: 0.4; }
-
-/* --- RESPONSIVE MOBILE --- */
+/* --- MOBILE --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Menú simple para móvil */
+    .nav-links { display: none; }
     .hero h1 { font-size: 2.2rem; }
-    .hero .subtitle { font-size: 1rem; }
-    section { padding: 4rem 5%; }
-    .logo-img { height: 45px; } /* Logo un poco más chico en celular */
+    .hero .subtitle { font-size: 1.1rem; }
+    .contact-card-wrapper { flex-direction: column; text-align: center; }
+    .contact-info { text-align: center; }
+    .contact-item { justify-content: center; }
 }
