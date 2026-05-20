@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labor HR | Coaching Ejecutivo, Evaluación de Conducta Segura y Selección Estratégica | Chile</title>
+    <meta name="description" content="Coaching ejecutivo para líderes en minería, infraestructura y salud. Evaluación de conducta segura en selección. Headhunting y desarrollo organizacional en Chile.">
+    <meta name="keywords" content="coaching ejecutivo Chile, evaluación conducta segura, selección estratégica Chile, desarrollo organizacional, headhunting minería, coaching liderazgo, evaluación psicolaboral seguridad, administrador de contrato coaching, coaching sector salud">
+    <link rel="canonical" href="https://laborhr.cl/">
+    <meta property="og:title" content="Labor HR | Gestión de Talento & Desarrollo Organizacional">
+    <meta property="og:description" content="Coaching ejecutivo para líderes, evaluación de conducta segura en selección y desarrollo organizacional. Socios estratégicos en gestión de talento en Chile.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://laborhr.cl/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #162A3E;
+            --navy-mid: #1E3A52;
+            --navy-deep: #0E1C2A;
+            --gold: #C8983C;
+            --gold-light: #D4AC5A;
+            --gold-pale: #F5EDD6;
+            --white: #FFFFFF;
+            --off-white: #FAFBFC;
+            --gray-50: #F5F6F8;
+            --gray-100: #ECEEF1;
+            --gray-200: #D8DDE3;
+            --gray-400: #8E99A4;
+            --gray-500: #6B7785;
+            --gray-600: #4A5568;
+            --gray-800: #2D3748;
+            --font-display: 'Libre Baskerville', Georgia, serif;
+            --font-body: 'Outfit', system-ui, sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            color: var(--gray-800); line-height: 1.65;
+            background: var(--white); overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+        .nav-inner {
+            max-width: 1140px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.8rem 2rem;
+        }
+        .nav-logo img { height: 40px; width: auto; }
+        .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
+        .nav-links a {
+            color: var(--gray-600); text-decoration: none; font-size: 0.88rem;
+            font-weight: 400; letter-spacing: 0.01em; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--navy); }
+        .nav-cta {
+            background: var(--navy); color: var(--white);
+            padding: 0.55rem 1.4rem; border-radius: 4px; text-decoration: none;
+            font-weight: 500; font-size: 0.85rem; letter-spacing: 0.02em; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--navy-mid); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--navy); margin: 5px 0; transition: 0.3s; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 92vh; display: flex; align-items: center;
+            background: var(--white);
+            position: relative; overflow: hidden;
+            padding: 8rem 2rem 5rem;
+        }
+        .hero::after {
+            content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
+            background: var(--gray-50);
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        .hero-inner {
+            max-width: 1140px; margin: 0 auto; width: 100%;
+            display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem;
+            align-items: center; position: relative; z-index: 1;
+        }
+        .hero-tagline {
+            font-family: var(--font-body); font-size: 0.75rem; font-weight: 500;
+            letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 1.5rem;
+            display: flex; align-items: center; gap: 0.8rem;
+        }
+        .hero-tagline::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+        .hero h1 {
+            font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--navy); line-height: 1.25; margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        .hero h1 em { font-style: italic; color: var(--gold); }
+        .hero-desc {
+            color: var(--gray-500); font-size: 1.05rem; line-height: 1.75;
+            margin-bottom: 2.5rem; max-width: 500px; font-weight: 300;
+        }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--navy); color: var(--white);
+            padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;
+            font-weight: 500; font-size: 0.92rem; letter-spacing: 0.02em;
+            transition: all 0.3s; border: 1.5px solid var(--navy);
+        }
+        .btn-primary:hover { background: var(--navy-mid); transform: translateY(-1px); }
+        .btn-outline {
+            background: transparent; color: var(--navy);
+            padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;
+            font-weight: 500; font-size: 0.92rem;
+            border: 1.5px solid var(--gray-200); transition: all 0.3s;
+        }
+        .btn-outline:hover { border-color: var(--navy); }
+
+        .hero-right { display: flex; flex-direction: column; gap: 1.2rem; }
+        .hero-stat {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-left: 3px solid var(--gold);
+            padding: 1.3rem 1.8rem; border-radius: 0 6px 6px 0;
+            transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .hero-stat:hover { transform: translateX(4px); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        .hero-stat-number {
+            font-family: var(--font-display); font-size: 1.8rem; color: var(--navy);
+            line-height: 1; font-weight: 700;
+        }
+        .hero-stat-label { color: var(--gray-500); font-size: 0.85rem; margin-top: 0.25rem; font-weight: 300; }
+
+        /* ── SECTIONS COMMON ── */
+        section { padding: 5.5rem 2rem; }
+        .section-inner { max-width: 1060px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem;
+            display: flex; align-items: center; gap: 0.6rem;
+        }
+        .section-label::before { content: ''; width: 24px; height: 1.5px; background: var(--gold); }
+        .section-title {
+            font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--navy); line-height: 1.3; margin-bottom: 1rem; font-weight: 400;
+        }
+        .section-desc {
+            color: var(--gray-500); font-size: 1rem; line-height: 1.75;
+            max-width: 600px; font-weight: 300;
+        }
+
+        /* ── SERVICIOS ── */
+        .servicios { background: var(--white); }
+        .servicios-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem; margin-top: 2.5rem;
+        }
+        .servicio-card {
+            background: var(--gray-50); border-radius: 6px;
+            padding: 2rem; border: 1px solid var(--gray-100);
+            transition: all 0.3s; position: relative;
+        }
+        .servicio-card::after {
+            content: ''; position: absolute; bottom: 0; left: 1.5rem; right: 1.5rem; height: 2px;
+            background: var(--gold); transform: scaleX(0); transform-origin: left;
+            transition: transform 0.4s;
+        }
+        .servicio-card:hover { background: var(--white); border-color: var(--gray-200); box-shadow: 0 8px 30px rgba(0,0,0,0.04); }
+        .servicio-card:hover::after { transform: scaleX(1); }
+        .servicio-card h3 {
+            font-family: var(--font-display); font-size: 1.1rem;
+            color: var(--navy); margin-bottom: 0.6rem; font-weight: 400;
+        }
+        .servicio-card p { color: var(--gray-500); font-size: 0.9rem; line-height: 1.7; font-weight: 300; }
+        .servicio-link {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--gold); text-decoration: none; font-weight: 500;
+            font-size: 0.85rem; margin-top: 1rem; transition: gap 0.2s;
+        }
+        .servicio-link:hover { gap: 0.7rem; }
+
+        /* ── MINERÍA ── */
+        .mineria {
+            background: var(--navy); color: var(--white); position: relative; overflow: hidden;
+        }
+        .mineria::before {
+            content: ''; position: absolute; top: -50%; right: -20%; width: 60%; height: 200%;
+            background: radial-gradient(ellipse, rgba(200,152,60,0.04) 0%, transparent 70%);
+        }
+        .mineria .section-title { color: var(--white); }
+        .mineria .section-desc { color: rgba(255,255,255,0.55); }
+        .mineria-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+            margin-top: 2.5rem; position: relative; z-index: 1;
+        }
+        .mineria-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px; padding: 2.2rem; transition: all 0.3s;
+        }
+        .mineria-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(200,152,60,0.25); }
+        .mineria-card h3 {
+            font-family: var(--font-display); font-size: 1.2rem;
+            color: var(--gold); margin-bottom: 0.8rem; font-weight: 400;
+        }
+        .mineria-card p { color: rgba(255,255,255,0.6); font-size: 0.92rem; line-height: 1.7; margin-bottom: 0.8rem; font-weight: 300; }
+        .mineria-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+        .mineria-tag {
+            background: rgba(200,152,60,0.1); color: var(--gold-light);
+            padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.75rem;
+            font-weight: 400; border: 1px solid rgba(200,152,60,0.15);
+        }
+        .mineria-card .btn-card {
+            display: inline-block; margin-top: 1.2rem;
+            color: var(--gold); text-decoration: none; font-weight: 500; font-size: 0.88rem;
+            border: 1px solid rgba(200,152,60,0.3); padding: 0.6rem 1.3rem; border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .mineria-card .btn-card:hover { background: rgba(200,152,60,0.08); border-color: var(--gold); }
+
+        /* ── CLIENTES ── */
+        .clientes { background: var(--gray-50); }
+        .clientes-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem; margin-top: 2.5rem;
+        }
+        .cliente-card {
+            padding: 1.6rem; border: 1px solid var(--gray-100); border-radius: 6px;
+            background: var(--white); transition: all 0.3s;
+        }
+        .cliente-card:hover { border-color: var(--gold-light); box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+        .cliente-name {
+            font-family: var(--font-display); font-size: 1rem;
+            color: var(--navy); margin-bottom: 0.4rem; font-weight: 400;
+        }
+        .cliente-proyecto { color: var(--gray-500); font-size: 0.85rem; line-height: 1.65; font-weight: 300; }
+        .cliente-industria {
+            display: inline-block; margin-top: 0.7rem;
+            font-size: 0.7rem; font-weight: 500; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--gold);
+            background: var(--gold-pale); padding: 0.2rem 0.6rem; border-radius: 3px;
+        }
+
+        /* ── DIRECTOR ── */
+        .director { background: var(--white); }
+        .director-inner {
+            display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: start;
+        }
+        .director-avatar {
+            width: 120px; height: 120px; border-radius: 50%;
+            background: var(--navy); display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-display); font-size: 2.2rem; color: var(--gold);
+            flex-shrink: 0;
+        }
+        .director-info h3 {
+            font-family: var(--font-display); color: var(--navy);
+            font-size: 1.4rem; margin-bottom: 0.2rem; font-weight: 400;
+        }
+        .director-info .role {
+            color: var(--gold); font-size: 0.78rem; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;
+        }
+        .director-info p {
+            color: var(--gray-500); font-size: 0.95rem; line-height: 1.75; font-weight: 300;
+            margin-bottom: 0.8rem; max-width: 600px;
+        }
+        .director-info .linkedin-link {
+            color: var(--navy); text-decoration: none; font-weight: 500; font-size: 0.9rem;
+            display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem;
+        }
+        .director-info .linkedin-link:hover { color: var(--gold); }
+
+        /* ── CONTACTO ── */
+        .contacto {
+            background: var(--navy); color: var(--white); text-align: center;
+            position: relative;
+        }
+        .contacto::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.3;
+        }
+        .contacto .section-label { justify-content: center; }
+        .contacto .section-label::before { display: none; }
+        .contacto .section-title { color: var(--white); }
+        .contacto-info {
+            display: flex; justify-content: center; gap: 2.5rem; margin-top: 2rem; flex-wrap: wrap;
+        }
+        .contacto-item { color: rgba(255,255,255,0.5); font-size: 0.95rem; font-weight: 300; }
+        .contacto-item a { color: var(--gold-light); text-decoration: none; }
+        .contacto-item a:hover { text-decoration: underline; }
+        .contacto-item strong {
+            display: block; color: rgba(255,255,255,0.7); font-size: 0.72rem;
+            text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem; font-weight: 500;
+        }
+        .contacto .btn-primary {
+            margin-top: 2rem; display: inline-block;
+            background: var(--gold); color: var(--navy-deep); border-color: var(--gold);
+        }
+        .contacto .btn-primary:hover { background: var(--gold-light); }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 1.8rem 2rem; text-align: center;
+        }
+        footer p { color: rgba(255,255,255,0.35); font-size: 0.78rem; font-weight: 300; }
+        footer .lema {
+            color: var(--gold); font-style: italic; font-family: var(--font-display);
+            font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 400;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero::after { display: none; }
+            .hero-right { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+            .mineria-grid { grid-template-columns: 1fr; }
+            .servicios-grid { grid-template-columns: 1fr 1fr; }
+            .clientes-grid { grid-template-columns: 1fr 1fr; }
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .nav-links.active {
+                display: flex; flex-direction: column; position: absolute;
+                top: 100%; left: 0; right: 0; background: var(--white);
+                padding: 1.5rem 2rem; gap: 1rem;
+                border-bottom: 1px solid var(--gray-100); box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            }
+            .director-inner { grid-template-columns: 1fr; text-align: center; }
+            .director-avatar { margin: 0 auto; }
+            .director-info p { max-width: 100%; }
+        }
+        @media (max-width: 640px) {
+            .hero-right { grid-template-columns: 1fr; }
+            section { padding: 3.5rem 1.5rem; }
+            .hero { padding: 7rem 1.5rem 3rem; min-height: auto; }
+            .hero-buttons { flex-direction: column; }
+            .servicios-grid { grid-template-columns: 1fr; }
+            .clientes-grid { grid-template-columns: 1fr; }
+            .contacto-info { flex-direction: column; gap: 1.2rem; }
+        }
+
+        /* ── ANIMATIONS ── */
+        .fade-up {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo"><img src="logo.png" alt="Labor HR - Shaping Your Future"></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#servicios">Soluciones</a></li>
+            <li><a href="#mineria">Minería</a></li>
+            <li><a href="#clientes">Clientes</a></li>
+            <li><a href="#director">Quién soy</a></li>
+            <li><a href="coaching-adc.html">Coaching ADC</a></li>
+            <li><a href="conducta-segura.html">Conducta Segura</a></li>
+        </ul>
+        <a href="#contacto" class="nav-cta">Conversemos</a>
+        <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <div class="hero-tagline">Labor Omnia Vincit</div>
+            <h1>Gestión de Talento &<br><em>Desarrollo Organizacional</em></h1>
+            <p class="hero-desc">Somos socios estratégicos que combinan visión comercial con presencia real en la operación. Especialistas en minería, infraestructura y agroindustria en Chile.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn-primary">Hablemos de tu desafío</a>
+                <a href="#servicios" class="btn-outline">Conoce nuestras soluciones</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-stat">
+                <div class="hero-stat-number">14+</div>
+                <div class="hero-stat-label">Años de experiencia en gestión de talento</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number">6</div>
+                <div class="hero-stat-label">Industrias atendidas en Chile</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number">100%</div>
+                <div class="hero-stat-label">Soluciones a medida de tu operación</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+    <div class="section-inner">
+        <div class="section-label">Portafolio de soluciones</div>
+        <h2 class="section-title">Del escritorio a la operación real</h2>
+        <p class="section-desc">Cada intervención tiene un objetivo medible: hacer tu organización más fuerte. No imponemos metodologías rígidas; diseñamos soluciones que calzan con tu realidad.</p>
+
+        <div class="servicios-grid">
+            <div class="servicio-card fade-up">
+                <h3>Selección Estratégica & Headhunting</h3>
+                <p>Conectamos capacidades técnicas con la cultura de tu operación. Mirada 360°, referencias validadas y garantía de permanencia para reducir la rotación temprana.</p>
+            </div>
+            <div class="servicio-card fade-up">
+                <h3>Evaluaciones Psicolaborales</h3>
+                <p>Plataforma evidence-based que triangula agilidad cognitiva, perfil conductual con 131 indicadores y entrevista de contrastación STAR. Decisiones libres de sesgo.</p>
+            </div>
+            <div class="servicio-card fade-up">
+                <h3>Evaluación de Conducta Segura</h3>
+                <p>Predecimos conducta en entornos críticos con tecnología de test oculto. Evaluamos impulsividad, propensión al riesgo y locus de control en la etapa de selección.</p>
+                <a href="conducta-segura.html" class="servicio-link">Conoce más →</a>
+            </div>
+            <div class="servicio-card fade-up">
+                <h3>Coaching Ejecutivo</h3>
+                <p>Procesos 1 a 1 con metodología GROW para transformar jefes técnicos en líderes que inspiran. Trabajamos con líderes en minería, infraestructura, salud y servicios.</p>
+                <a href="coaching-adc.html" class="servicio-link">Ver programa para minería →</a>
+            </div>
+            <div class="servicio-card fade-up">
+                <h3>Team Bonding & Alineamiento</h3>
+                <p>Intervenciones prácticas para reconstruir confianza y responsabilidad compartida. No recreación: trabajo real sobre las dinámicas que frenan a tu equipo.</p>
+            </div>
+            <div class="servicio-card fade-up">
+                <h3>Formación & DNC Estratégica</h3>
+                <p>Levantamiento real de necesidades para diseñar formación que responde a brechas operativas. Academias de liderazgo y programas a medida.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ESPECIALIZACIÓN MINERÍA -->
+<section class="mineria" id="mineria">
+    <div class="section-inner">
+        <div class="section-label">Especialización en minería e infraestructura</div>
+        <h2 class="section-title">Donde otros dan cursos, nosotros acompañamos</h2>
+        <p class="section-desc">Dos servicios diseñados para los desafíos específicos de la industria minera: personal filtrado, evaluado y desplegado en las principales faenas del país.</p>
+
+        <div class="mineria-grid">
+            <div class="mineria-card fade-up">
+                <h3>Coaching para Administradores de Contrato</h3>
+                <p>Los ADC son líderes técnicos que enfrentan desafíos de gestión de personas todos los días: comunicación con mandantes, manejo de conflictos en faena y liderazgo de equipos multidisciplinarios.</p>
+                <p>Nuestro programa los acompaña uno a uno para cerrar brechas en comunicación efectiva, resolución de conflictos, gestión del cambio y gestión por compromisos.</p>
+                <div class="mineria-tags">
+                    <span class="mineria-tag">Metodología GROW</span>
+                    <span class="mineria-tag">Liderazgo Situacional</span>
+                    <span class="mineria-tag">Seguridad Psicológica</span>
+                    <span class="mineria-tag">Stop Work Authority</span>
+                </div>
+                <a href="coaching-adc.html" class="btn-card">Ver programa completo →</a>
+            </div>
+            <div class="mineria-card fade-up">
+                <h3>Evaluación de Conducta Segura en Selección</h3>
+                <p>La evaluación psicolaboral tradicional no basta en entornos de alto riesgo. Nuestra evaluación utiliza tecnología de test oculto: las preguntas de seguridad están integradas y aleatorizadas dentro del cuestionario de personalidad, anulando la deseabilidad social.</p>
+                <p>Evaluamos impulsividad, propensión al riesgo y locus de control. Complementamos con la entrevista de "Criterio Prudente" para validar la capacidad real de detener una faena insegura.</p>
+                <div class="mineria-tags">
+                    <span class="mineria-tag">Índice de Seguridad</span>
+                    <span class="mineria-tag">Test Oculto</span>
+                    <span class="mineria-tag">Locus de Control</span>
+                    <span class="mineria-tag">Criterio Prudente</span>
+                </div>
+                <a href="conducta-segura.html" class="btn-card">Ver detalle técnico →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CLIENTES -->
+<section class="clientes" id="clientes">
+    <div class="section-inner">
+        <div class="section-label">Casos de éxito</div>
+        <h2 class="section-title">Empresas que confían en nosotros</h2>
+        <p class="section-desc">Cada proyecto nace de un problema real. Estos son algunos de los desafíos que hemos abordado junto a nuestros clientes.</p>
+
+        <div class="clientes-grid">
+            <div class="cliente-card fade-up">
+                <div class="cliente-name">United Pipelines</div>
+                <div class="cliente-proyecto">Coaching de administradores de contrato, talleres de trabajo en equipo en faena, evaluaciones de conducta segura y evaluaciones socioemocionales para personal desplegado en las principales faenas mineras del país.</div>
+                <span class="cliente-industria">Minería & Infraestructura</span>
+            </div>
+            <div class="cliente-card fade-up">
+                <div class="cliente-name">Relix Water</div>
+                <div class="cliente-proyecto">Programa de formación para administradores de contrato y coaching ejecutivo para roles clave en operaciones y terreno.</div>
+                <span class="cliente-industria">Ingeniería & Agua</span>
+            </div>
+            <div class="cliente-card fade-up">
+                <div class="cliente-name">Moreau</div>
+                <div class="cliente-proyecto">Reclutamiento estratégico para el proyecto Andes Norte en División El Teniente, asegurando talento clave para una licitación de alta exigencia.</div>
+                <span class="cliente-industria">Minería</span>
+            </div>
+            <div class="cliente-card fade-up">
+                <div class="cliente-name">Antufen Seeds</div>
+                <div class="cliente-proyecto">Procesos de selección estratégica para posiciones clave en la operación agroindustrial.</div>
+                <span class="cliente-industria">Agroindustria</span>
+            </div>
+            <div class="cliente-card fade-up">
+                <div class="cliente-name">Affluence Partners</div>
+                <div class="cliente-proyecto">Programa de desarrollo de habilidades comerciales diseñado a medida para un equipo de consultores senior en wealth management. Formato experiencial con herramientas aplicables de inmediato.</div>
+                <span class="cliente-industria">Servicios Financieros</span>
+            </div>
+            <div class="cliente-card fade-up">
+                <div class="cliente-name">APex Andes</div>
+                <div class="cliente-proyecto">Taller a medida para madres trabajadoras sobre carga mental, gestión del tiempo y herramientas prácticas de autocuidado para el día a día profesional y personal.</div>
+                <span class="cliente-industria">Logística</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIRECTOR -->
+<section class="director" id="director">
+    <div class="section-inner">
+        <div class="section-label">Quién está detrás</div>
+        <h2 class="section-title">Dirección & Fundación</h2>
+        <div class="director-inner" style="margin-top: 2rem;">
+            <div class="director-avatar">GR</div>
+            <div class="director-info">
+                <h3>Gastón Ramírez C.</h3>
+                <div class="role">Director & Fundador — Labor HR</div>
+                <p>Ingeniero Civil Industrial e Ingeniero Agrónomo con más de 14 años de trayectoria en gestión de talento, selección estratégica y desarrollo organizacional. Construyó su carrera en consultoras multinacionales y nacionales de gestión de personas, lo que le dio una visión transversal de la industria del capital humano en Chile.</p>
+                <p>Fundó Labor HR con una convicción: que la realidad operativa de Chile requiere más que teoría. Que en una faena minera, en una clínica, en una planta agroindustrial o en una mesa de wealth management, lo que marca la diferencia es entender el negocio detrás del cargo y encontrar a las personas que no solo saben hacer el trabajo, sino que quieren hacerlo contigo.</p>
+                <p>Hoy lidera un equipo de coaches y consultores senior, y trabaja directamente con cada cliente diseñando soluciones a medida para sus desafíos de talento y liderazgo.</p>
+                <a href="https://www.linkedin.com/company/laborhr" target="_blank" class="linkedin-link">Conectar en LinkedIn →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+    <div class="section-inner">
+        <div class="section-label">Conversemos</div>
+        <h2 class="section-title">Tu próximo desafío empieza con una conversación</h2>
+        <p class="section-desc" style="margin: 0 auto; color: rgba(255,255,255,0.5);">Ya conoces nuestras herramientas y nuestra filosofía. Ahora queremos entender la realidad de tu operación.</p>
+        <div class="contacto-info">
+            <div class="contacto-item">
+                <strong>Email</strong>
+                <a href="mailto:contacto@laborhr.cl">contacto@laborhr.cl</a>
+            </div>
+            <div class="contacto-item">
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/56996747563">+56 9 9674 7563</a>
+            </div>
+            <div class="contacto-item">
+                <strong>LinkedIn</strong>
+                <a href="https://www.linkedin.com/company/laborhr" target="_blank">Labor HR</a>
+            </div>
+        </div>
+        <a href="https://wa.me/56996747563" class="btn-primary" target="_blank">Escribir por WhatsApp</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p class="lema">Labor Omnia Vincit — El trabajo todo lo vence</p>
+    <p>&copy; 2026 Labor HR Gestión de Talento. Santiago, Chile. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
