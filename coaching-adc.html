@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching para Administradores de Contrato en Minería | Labor HR Chile</title>
+    <meta name="description" content="Programa de coaching ejecutivo especializado en administradores de contrato (ADC) para minería e infraestructura. Desarrollo de liderazgo, comunicación y gestión de equipos en faena. Labor HR Chile.">
+    <meta name="keywords" content="coaching administrador de contrato, coaching ADC minería, desarrollo liderazgo minería, coaching ejecutivo faena, administrador de contrato capacitación, liderazgo minería Chile">
+    <link rel="canonical" href="https://laborhr.cl/coaching-adc.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #162A3E; --navy-mid: #1E3A52; --navy-deep: #0E1C2A;
+            --gold: #C8983C; --gold-light: #D4AC5A; --gold-pale: #F5EDD6;
+            --white: #FFFFFF; --gray-50: #F5F6F8; --gray-100: #ECEEF1;
+            --gray-200: #D8DDE3; --gray-400: #8E99A4; --gray-500: #6B7785;
+            --gray-600: #4A5568; --gray-800: #2D3748;
+            --font-display: 'Libre Baskerville', Georgia, serif;
+            --font-body: 'Outfit', system-ui, sans-serif;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); color: var(--gray-800); line-height: 1.65; background: var(--white); }
+
+        /* NAV */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-100); }
+        .nav-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.8rem 2rem; }
+        .nav-logo img { height: 40px; width: auto; }
+        .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--gray-600); text-decoration: none; font-size: 0.88rem; font-weight: 400; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--navy); }
+        .nav-cta { background: var(--navy); color: var(--white); padding: 0.55rem 1.4rem; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: all 0.2s; }
+        .nav-cta:hover { background: var(--navy-mid); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--navy); margin: 5px 0; }
+
+        /* PAGE HERO */
+        .page-hero {
+            padding: 8rem 2rem 4rem; background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+        }
+        .page-hero-inner { max-width: 720px; margin: 0 auto; }
+        .breadcrumb { font-size: 0.8rem; color: var(--gray-400); margin-bottom: 1.5rem; font-weight: 300; }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .page-hero h1 {
+            font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            color: var(--navy); line-height: 1.3; margin-bottom: 1.2rem; font-weight: 400;
+        }
+        .page-hero h1 em { font-style: italic; color: var(--gold); }
+        .page-hero .lead {
+            color: var(--gray-500); font-size: 1.05rem; line-height: 1.8; font-weight: 300; max-width: 620px;
+        }
+
+        /* CONTENT */
+        .content { padding: 4rem 2rem; }
+        .content-inner { max-width: 720px; margin: 0 auto; }
+        .content h2 {
+            font-family: var(--font-display); font-size: 1.4rem; color: var(--navy);
+            margin: 3rem 0 1rem; font-weight: 400; line-height: 1.35;
+        }
+        .content h2:first-child { margin-top: 0; }
+        .content p {
+            color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; font-weight: 300;
+        }
+        .content strong { font-weight: 500; color: var(--gray-800); }
+
+        /* BRECHAS */
+        .brechas {
+            background: var(--gray-50); border: 1px solid var(--gray-100);
+            border-radius: 6px; padding: 2rem; margin: 2rem 0;
+        }
+        .brechas h3 {
+            font-family: var(--font-display); font-size: 1.1rem; color: var(--navy);
+            margin-bottom: 1rem; font-weight: 400;
+        }
+        .brecha-item {
+            display: flex; align-items: flex-start; gap: 0.8rem;
+            padding: 0.6rem 0; border-bottom: 1px solid var(--gray-100);
+            color: var(--gray-600); font-size: 0.9rem; line-height: 1.6; font-weight: 300;
+        }
+        .brecha-item:last-child { border-bottom: none; }
+        .brecha-num {
+            flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+            background: var(--navy); color: var(--gold); font-size: 0.75rem; font-weight: 500;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        /* PROCESO */
+        .proceso {
+            background: var(--navy); color: var(--white); padding: 4rem 2rem;
+        }
+        .proceso-inner { max-width: 720px; margin: 0 auto; }
+        .proceso h2 {
+            font-family: var(--font-display); font-size: 1.4rem; color: var(--white);
+            margin-bottom: 0.5rem; font-weight: 400;
+        }
+        .proceso .subtitle { color: rgba(255,255,255,0.5); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 300; }
+        .proceso-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .proceso-step {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px; padding: 1.8rem;
+        }
+        .proceso-step h4 {
+            font-family: var(--font-display); color: var(--gold); font-size: 1rem;
+            margin-bottom: 0.5rem; font-weight: 400;
+        }
+        .proceso-step p { color: rgba(255,255,255,0.55); font-size: 0.88rem; line-height: 1.7; font-weight: 300; }
+
+        /* MÓDULOS */
+        .modulos { padding: 4rem 2rem; background: var(--white); }
+        .modulos-inner { max-width: 720px; margin: 0 auto; }
+        .modulos h2 {
+            font-family: var(--font-display); font-size: 1.4rem; color: var(--navy);
+            margin-bottom: 2rem; font-weight: 400;
+        }
+        .modulo {
+            border-left: 2px solid var(--gold); padding: 1.2rem 0 1.2rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .modulo h3 {
+            font-family: var(--font-display); color: var(--navy); font-size: 1.05rem;
+            margin-bottom: 0.3rem; font-weight: 400;
+        }
+        .modulo .foco { color: var(--gold); font-size: 0.8rem; font-style: italic; margin-bottom: 0.5rem; }
+        .modulo p { color: var(--gray-500); font-size: 0.9rem; line-height: 1.7; font-weight: 300; }
+
+        /* CTA */
+        .cta-section {
+            background: var(--gray-50); padding: 4rem 2rem; text-align: center;
+            border-top: 1px solid var(--gray-100);
+        }
+        .cta-section h2 {
+            font-family: var(--font-display); font-size: 1.4rem; color: var(--navy);
+            margin-bottom: 0.8rem; font-weight: 400;
+        }
+        .cta-section p { color: var(--gray-500); font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: 300; }
+        .btn-primary {
+            background: var(--navy); color: var(--white);
+            padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;
+            font-weight: 500; font-size: 0.92rem; transition: all 0.3s; display: inline-block;
+        }
+        .btn-primary:hover { background: var(--navy-mid); }
+
+        /* FOOTER */
+        footer { background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.05); padding: 1.8rem 2rem; text-align: center; }
+        footer p { color: rgba(255,255,255,0.35); font-size: 0.78rem; font-weight: 300; }
+        footer .lema { color: var(--gold); font-style: italic; font-family: var(--font-display); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 400; }
+
+        @media (max-width: 960px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 1.5rem 2rem; gap: 1rem; border-bottom: 1px solid var(--gray-100); }
+            .proceso-steps { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .page-hero { padding: 7rem 1.5rem 3rem; }
+            .content, .modulos, .cta-section { padding: 3rem 1.5rem; }
+            .proceso { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo"><img src="logo.png" alt="Labor HR"></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#servicios">Soluciones</a></li>
+            <li><a href="index.html#mineria">Minería</a></li>
+            <li><a href="index.html#clientes">Clientes</a></li>
+            <li><a href="conducta-segura.html">Conducta Segura</a></li>
+        </ul>
+        <a href="index.html#contacto" class="nav-cta">Conversemos</a>
+        <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="breadcrumb"><a href="index.html">Labor HR</a> / Coaching para Administradores de Contrato</div>
+        <h1>Coaching ejecutivo para <em>Administradores de Contrato</em> en minería</h1>
+        <p class="lead">Los ADC son líderes técnicos que enfrentan desafíos de gestión de personas todos los días. Nuestro programa los acompaña uno a uno para cerrar las brechas que impactan la efectividad de sus equipos y la relación con el mandante.</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="content-inner">
+        <h2>El problema que resolvemos</h2>
+        <p>En industrias donde el expertise técnico es altamente valorado, los profesionales que asumen roles de administración de contrato suelen enfrentar un desafío silencioso: saben operar, pero nadie les enseñó a liderar.</p>
+        <p>La consecuencia es predecible. Comunicación deficiente con el mandante. Conflictos que escalan innecesariamente. Equipos que funcionan por inercia y no por convicción. Resistencia al cambio cuando la operación lo exige. Y una brecha creciente entre lo que el rol demanda y las herramientas que el ADC tiene para responder.</p>
+        <p>No se trata de falta de voluntad. Se trata de que <strong>el liderazgo en faena no se aprende en un diplomado</strong>. Se desarrolla con acompañamiento real, en contexto, trabajando sobre las situaciones concretas que el ADC vive en su día a día.</p>
+
+        <div class="brechas">
+            <h3>Brechas frecuentes que abordamos</h3>
+            <div class="brecha-item">
+                <span class="brecha-num">1</span>
+                <span>Dificultades en la comunicación interpersonal y la transmisión de mensajes clave al mandante y al equipo.</span>
+            </div>
+            <div class="brecha-item">
+                <span class="brecha-num">2</span>
+                <span>Estilos de liderazgo enfocados en lo técnico, con poco desarrollo de habilidades relacionales.</span>
+            </div>
+            <div class="brecha-item">
+                <span class="brecha-num">3</span>
+                <span>Escasa capacidad para abordar y resolver conflictos de forma constructiva, tanto internos como con la contraparte.</span>
+            </div>
+            <div class="brecha-item">
+                <span class="brecha-num">4</span>
+                <span>Dificultades para generar confianza y cohesión en equipos multidisciplinarios y rotativos.</span>
+            </div>
+            <div class="brecha-item">
+                <span class="brecha-num">5</span>
+                <span>Resistencia al cambio y desafíos para adaptarse a nuevas dinámicas organizacionales o contractuales.</span>
+            </div>
+            <div class="brecha-item">
+                <span class="brecha-num">6</span>
+                <span>Priorización de resultados por sobre el cumplimiento de procesos y estándares de seguridad preventiva.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="proceso">
+    <div class="proceso-inner">
+        <h2>Cómo funciona el proceso</h2>
+        <p class="subtitle">Programa de acompañamiento individual con sesiones de coaching y reuniones tripartitas de seguimiento.</p>
+        <div class="proceso-steps">
+            <div class="proceso-step">
+                <h4>Diagnóstico y definición de objetivos</h4>
+                <p>Identificamos el punto de partida a través de reuniones tripartitas con jefatura directa, RRHH y el coachee. Se alinean expectativas y se establecen metas concretas para el proceso.</p>
+            </div>
+            <div class="proceso-step">
+                <h4>Coaching y desarrollo de competencias</h4>
+                <p>En función de los objetivos, iniciamos el camino establecido en el road map de desarrollo, abordando las temáticas priorizadas a través de sesiones individuales.</p>
+            </div>
+            <div class="proceso-step">
+                <h4>Reuniones de feedback</h4>
+                <p>Espacios de retroalimentación con la jefatura directa y/o RRHH para evaluar avances, ajustar estrategias y reforzar compromisos de desarrollo.</p>
+            </div>
+            <div class="proceso-step">
+                <h4>Evaluación y cierre</h4>
+                <p>Se analizan los logros alcanzados y se entrega un plan de acción para sostener el desarrollo del líder. Reunión de cierre para asegurar la continuidad en la práctica diaria.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="modulos">
+    <div class="modulos-inner">
+        <h2>Temáticas que abordamos</h2>
+        <div class="modulo">
+            <h3>Comunicación y manejo de conflictos</h3>
+            <div class="foco">Foco: relaciones efectivas</div>
+            <p>Cómo abordar y resolver conflictos de manera constructiva. Comunicación no violenta. Gestionar las emociones del equipo. Identificar las etapas del conflicto y lo que exige cada una.</p>
+        </div>
+        <div class="modulo">
+            <h3>Gestionar el desempeño y la excelencia</h3>
+            <div class="foco">Foco: resultados sostenibles</div>
+            <p>Desarrollar confianza y reinterpretar el error. Evaluar el desempeño del equipo prestando apoyo para la reducción de brechas. Establecer metas claras y fomentar la mejora continua.</p>
+        </div>
+        <div class="modulo">
+            <h3>Liderar en contextos de cambio</h3>
+            <div class="foco">Foco: adaptabilidad</div>
+            <p>Cuestionamiento del rol del líder ante los cambios. Modelar actitudes positivas en la incertidumbre. Estrategias para superar la resistencia al cambio. Sumar promotores y reducir detractores.</p>
+        </div>
+        <div class="modulo">
+            <h3>Trabajo colaborativo y autogestión</h3>
+            <div class="foco">Foco: autonomía del equipo</div>
+            <p>Empoderar a los colaboradores. Definir expectativas claras sobre las contribuciones individuales. Autoliderazgo. Cuidar el clima laboral del equipo.</p>
+        </div>
+        <div class="modulo">
+            <h3>Desarrollo de personas</h3>
+            <div class="foco">Foco: crecimiento del equipo</div>
+            <p>Liderazgo situacional. Seguridad psicológica. Crear planes de desarrollo individualizados y brindar retroalimentación y reconocimiento efectivo.</p>
+        </div>
+        <div class="modulo">
+            <h3>Gestión por compromisos</h3>
+            <div class="foco">Foco: accountability</div>
+            <p>Comprensión de las tareas de los demás. Estimular la contribución común. Promesas valiosas. Cumplimiento de los acuerdos de servicio con el mandante.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>¿Tu equipo de ADC enfrenta estos desafíos?</h2>
+    <p>Conversemos sobre cómo podemos acompañar a tus administradores de contrato en su desarrollo como líderes.</p>
+    <a href="https://wa.me/56996747563" class="btn-primary" target="_blank">Escribir por WhatsApp</a>
+</section>
+
+<footer>
+    <p class="lema">Labor Omnia Vincit — El trabajo todo lo vence</p>
+    <p>&copy; 2026 Labor HR Gestión de Talento. Santiago, Chile.</p>
+</footer>
+
+</body>
+</html>
