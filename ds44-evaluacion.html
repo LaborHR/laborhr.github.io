@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Tu operación cumple con el DS44? | Labor HR</title>
+<meta name="description" content="Autoevaluación gratuita de cumplimiento del Decreto Supremo 44 para operaciones industriales. Identifica brechas antes de una fiscalización.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #162A3E;
+    --navy-90: rgba(22,42,62,0.9);
+    --navy-light: #1e3a54;
+    --accent: #162A3E;
+    --accent-light: #1C3450;
+    --accent-muted: rgba(22,42,62,0.06);
+    --accent-border: rgba(22,42,62,0.15);
+    --slate-50: #F8FAFC;
+    --slate-100: #F1F5F9;
+    --slate-200: #E2E8F0;
+    --slate-400: #94A3B8;
+    --slate-500: #64748B;
+    --slate-700: #334155;
+    --slate-900: #0F172A;
+    --white: #FFFFFF;
+    --red: #DC2626;
+    --red-bg: #FEF2F2;
+    --amber: #D97706;
+    --amber-bg: #FFFBEB;
+    --green: #16A34A;
+    --green-bg: #F0FDF4;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--slate-50);
+    color: var(--slate-700);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-logo {
+    height: 28px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+  .header-sep {
+    width: 1px;
+    height: 20px;
+    background: rgba(255,255,255,0.2);
+  }
+  .header-title {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .header-name {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .header-badge {
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+
+  /* INTRO */
+  .intro { padding: 56px 0 48px; }
+  .intro-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .intro h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 800;
+    color: var(--slate-900);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .intro p {
+    font-size: 16px;
+    color: var(--slate-500);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+  .intro-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--slate-200);
+  }
+  .intro-stat {
+    display: flex;
+    flex-direction: column;
+  }
+  .intro-stat .num {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .intro-stat .label {
+    font-size: 12px;
+    color: var(--slate-400);
+    font-weight: 500;
+  }
+  .btn-start {
+    display: inline-block;
+    margin-top: 32px;
+    background: var(--accent);
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-start:hover { background: var(--accent-light); }
+
+  /* SIZE SELECTOR */
+  .size-selector {
+    display: none;
+    padding: 40px 0;
+    animation: fadeIn 0.3s ease;
+  }
+  .size-selector h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 8px;
+  }
+  .size-selector p {
+    font-size: 14px;
+    color: var(--slate-500);
+    margin-bottom: 24px;
+  }
+  .size-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .size-opt {
+    background: var(--white);
+    border: 2px solid var(--slate-200);
+    border-radius: 10px;
+    padding: 20px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .size-opt:hover { border-color: var(--accent); }
+  .size-opt.selected { border-color: var(--accent); background: var(--accent-muted); }
+  .size-opt .size-range {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .size-opt .size-label {
+    font-size: 12px;
+    color: var(--slate-500);
+  }
+
+  /* PROGRESS */
+  .progress-wrap { padding: 24px 0 8px; display: none; }
+  .progress-track {
+    height: 3px;
+    background: var(--slate-200);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .progress-dim { font-weight: 600; color: var(--navy); }
+  .progress-count { color: var(--slate-400); }
+
+  /* QUESTIONS */
+  .q-section { display: none; padding: 16px 0 40px; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn {
+    from { opacity:0; transform:translateY(10px); }
+    to { opacity:1; transform:translateY(0); }
+  }
+  .q-dim-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 4px;
+  }
+  .q-dim-desc {
+    font-size: 13px;
+    color: var(--slate-400);
+    margin-bottom: 20px;
+  }
+  .q-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 12px;
+    border: 1px solid var(--slate-200);
+  }
+  .q-card p {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--slate-700);
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+  .q-card .q-ref {
+    font-size: 11px;
+    color: var(--slate-400);
+    margin-bottom: 14px;
+  }
+  .q-options {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .q-options label {
+    cursor: pointer;
+  }
+  .q-options input { display: none; }
+  .q-opt-btn {
+    display: inline-block;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1.5px solid var(--slate-200);
+    color: var(--slate-500);
+    transition: all 0.15s;
+    background: var(--white);
+  }
+  .q-opt-btn:hover { border-color: var(--slate-400); }
+  .q-options input:checked + .q-opt-btn.opt-yes {
+    background: var(--green-bg); border-color: var(--green); color: var(--green);
+  }
+  .q-options input:checked + .q-opt-btn.opt-partial {
+    background: var(--amber-bg); border-color: var(--amber); color: var(--amber);
+  }
+  .q-options input:checked + .q-opt-btn.opt-no {
+    background: var(--red-bg); border-color: var(--red); color: var(--red);
+  }
+  .q-options input:checked + .q-opt-btn.opt-na {
+    background: var(--slate-100); border-color: var(--slate-400); color: var(--slate-500);
+  }
+  .nav-btns { display: flex; justify-content: space-between; margin-top: 24px; }
+  .btn-back, .btn-next {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+  .btn-back {
+    background: transparent;
+    color: var(--slate-400);
+    border: 1px solid var(--slate-200);
+  }
+  .btn-back:hover { border-color: var(--slate-400); color: var(--slate-700); }
+  .btn-next {
+    background: var(--navy);
+    color: var(--white);
+    margin-left: auto;
+  }
+  .btn-next:hover { background: var(--navy-light); }
+  .btn-next:disabled { opacity: 0.35; cursor: not-allowed; }
+
+  /* RESULTS */
+  .results { display: none; padding: 40px 0 60px; animation: fadeIn 0.4s ease; }
+  .results-top {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .score-ring {
+    width: 110px; height: 110px;
+    position: relative;
+  }
+  .score-ring svg { transform: rotate(-90deg); }
+  .score-ring .ring-bg { stroke: var(--slate-200); }
+  .score-ring .ring-fill { transition: stroke-dashoffset 1s ease; }
+  .score-ring .score-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .score-ring .score-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--slate-900);
+    line-height: 1;
+  }
+  .score-ring .score-pct {
+    font-size: 13px;
+    color: var(--slate-400);
+    font-weight: 500;
+  }
+  .results-summary h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 6px;
+  }
+  .results-summary p {
+    font-size: 14px;
+    color: var(--slate-500);
+    line-height: 1.6;
+  }
+  .dim-cards { display: grid; gap: 10px; margin-top: 24px; }
+  .dim-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 18px 20px;
+    border: 1px solid var(--slate-200);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .dim-card .dim-icon {
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  .dim-icon.ok { background: var(--green-bg); color: var(--green); }
+  .dim-icon.warn { background: var(--amber-bg); color: var(--amber); }
+  .dim-icon.crit { background: var(--red-bg); color: var(--red); }
+  .dim-card .dim-info { flex: 1; }
+  .dim-card .dim-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 2px;
+  }
+  .dim-card .dim-info .dim-text {
+    font-size: 12px;
+    color: var(--slate-500);
+    line-height: 1.5;
+  }
+  .dim-card .dim-pct {
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .disclaimer {
+    background: var(--slate-100);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 28px;
+    font-size: 12px;
+    color: var(--slate-400);
+    line-height: 1.6;
+  }
+
+  .cta-box {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 32px 28px;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .cta-box h3 {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .cta-box p {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  .cta-btns { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-cta-main { background: var(--white); color: var(--navy); }
+  .btn-cta-main:hover { background: var(--slate-200); }
+  .btn-cta-ghost {
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .btn-cta-ghost:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+
+  .footer {
+    text-align: center;
+    padding: 32px 20px;
+    font-size: 12px;
+    color: var(--slate-400);
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 520px) {
+    .size-options { grid-template-columns: 1fr; }
+    .results-top { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .intro-stats { flex-direction: column; gap: 12px; }
+    .q-options { flex-direction: column; }
+    .q-options label { width: 100%; }
+    .q-opt-btn { display: block; width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">
+    <img src="https://laborhr.cl/logo.png" alt="Labor HR" class="header-logo">
+    <div class="header-sep"></div>
+    <span class="header-title">Autoevaluación DS44</span>
+  </div>
+  <span class="header-badge">Herramienta gratuita</span>
+</div>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="intro" id="intro">
+    <div class="intro-eyebrow">Autoevaluación DS44</div>
+    <h1>¿Tu operación está lista para una fiscalización?</h1>
+    <p>El Decreto Supremo 44 entró en vigencia el 1 de febrero de 2025 y la fiscalización ya está activa. Esta herramienta evalúa tu nivel de cumplimiento en las mismas dimensiones que revisa un inspector de la Dirección del Trabajo.</p>
+    <p>Tus respuestas no se almacenan. Todo se procesa en tu navegador.</p>
+    <div class="intro-stats">
+      <div class="intro-stat"><span class="num">21</span><span class="label">preguntas</span></div>
+      <div class="intro-stat"><span class="num">7</span><span class="label">dimensiones</span></div>
+      <div class="intro-stat"><span class="num">5 min</span><span class="label">para completar</span></div>
+    </div>
+    <button class="btn-start" onclick="showSizeSelector()">Comenzar evaluación</button>
+  </div>
+
+  <!-- SIZE SELECTOR -->
+  <div class="size-selector" id="sizeSelector">
+    <h2>¿Cuántas personas trabajan en tu operación?</h2>
+    <p>Algunas obligaciones del DS44 dependen del tamaño de la empresa.</p>
+    <div class="size-options">
+      <div class="size-opt" onclick="selectSize('small',this)">
+        <div class="size-range">1 - 25</div>
+        <div class="size-label">personas</div>
+      </div>
+      <div class="size-opt" onclick="selectSize('medium',this)">
+        <div class="size-range">26 - 100</div>
+        <div class="size-label">personas</div>
+      </div>
+      <div class="size-opt" onclick="selectSize('large',this)">
+        <div class="size-range">Más de 100</div>
+        <div class="size-label">personas</div>
+      </div>
+    </div>
+    <div class="nav-btns" style="margin-top:24px">
+      <button class="btn-next" id="btnSizeNext" disabled onclick="startQuiz()">Continuar</button>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-info">
+      <span class="progress-dim" id="progressDim"></span>
+      <span class="progress-count" id="progressCount"></span>
+    </div>
+  </div>
+
+  <div id="qContainer"></div>
+
+  <!-- RESULTS -->
+  <div class="results" id="results">
+    <div class="results-top">
+      <div class="score-ring">
+        <svg width="110" height="110" viewBox="0 0 110 110">
+          <circle class="ring-bg" cx="55" cy="55" r="48" fill="none" stroke-width="8"/>
+          <circle class="ring-fill" id="ringFill" cx="55" cy="55" r="48" fill="none" stroke-width="8"
+            stroke-dasharray="301.6" stroke-dashoffset="301.6" stroke-linecap="round"/>
+        </svg>
+        <div class="score-text">
+          <span class="score-num" id="scoreNum"></span>
+          <span class="score-pct">de 100</span>
+        </div>
+      </div>
+      <div class="results-summary">
+        <h2 id="resultTitle"></h2>
+        <p id="resultDesc"></p>
+      </div>
+    </div>
+    <div class="dim-cards" id="dimCards"></div>
+    <div class="disclaimer">
+      Esta herramienta es un recurso de autoevaluación basado en las dimensiones del Formulario Único de Fiscalización (FUF) del DS N°44/2024. No constituye una auditoría legal ni reemplaza la asesoría de un profesional en prevención de riesgos. Las referencias normativas son orientativas.
+    </div>
+    <div class="cta-box">
+      <h3>¿Detectaste brechas?</h3>
+      <p>Nuestro equipo trabaja con operaciones mineras, energéticas y de infraestructura para cerrar brechas de cumplimiento en gestión preventiva.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/56996747563?text=Hola%2C%20hice%20la%20autoevaluaci%C3%B3n%20DS44%20en%20laborhr.cl%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20las%20brechas%20que%20identifiqu%C3%A9." class="btn-cta btn-cta-main">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.856L.057 23.64l5.926-1.476A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.78 9.78 0 01-5.32-1.48l-.38-.228-3.517.876.892-3.456-.25-.394A9.786 9.786 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818 5.423 0 9.818 4.395 9.818 9.818 0 5.423-4.395 9.818-9.818 9.818z"/></svg>
+          Conversemos
+        </a>
+        <button class="btn-cta btn-cta-ghost" onclick="resetQuiz()">Repetir evaluación</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Powered by <a href="https://laborhr.cl">Labor HR</a> · Santiago, Chile · 2026</p>
+</div>
+
+<script>
+// ═══ DATA ═══
+const dims = [
+  {
+    id:'miper', name:'Identificación y evaluación de riesgos',
+    desc:'Matriz MIPER y mapas de riesgos (Art. 7, 62)',
+    questions:[
+      {text:'La empresa cuenta con una Matriz de Identificación de Peligros y Evaluación de Riesgos (MIPER) actualizada, que considera todos los agentes y factores de riesgo del lugar de trabajo.', ref:'Art. 7, inc. 1'},
+      {text:'La MIPER incorpora un enfoque de género, identificando riesgos diferenciados según las características de las personas trabajadoras.', ref:'Art. 7, inc. 3'},
+      {text:'Se mantienen mapas de riesgos en lugares visibles de las dependencias, con dibujo o esquema del lugar de trabajo y los principales riesgos identificados.', ref:'Art. 62, inc. 1 y 2'}
+    ],
+    interp:{
+      ok:'La identificación de riesgos está al día. Es la base del sistema de gestión y la primera cosa que un fiscalizador revisa.',
+      warn:'Existen brechas en la identificación de riesgos. Esta es una de las materias más sancionadas: no tener MIPER o tenerla incompleta concentra la mayor cantidad de multas.',
+      crit:'La evaluación de riesgos tiene deficiencias críticas. En las primeras fiscalizaciones del DS44, no contar con MIPER fue la segunda causa de sanción más frecuente.'
+    }
+  },
+  {
+    id:'programa', name:'Programa de trabajo preventivo',
+    desc:'Planificación de actividades preventivas (Art. 8)',
+    questions:[
+      {text:'Existe un programa de trabajo en prevención de riesgos laborales anual, con actividades concretas, responsables y plazos definidos.', ref:'Art. 8'},
+      {text:'El programa incluye actividades de promoción para prevenir factores de riesgo asociados al consumo de alcohol y drogas, riesgos psicosociales y ergonómicos.', ref:'Art. 8, lit. a, b, c'},
+      {text:'El programa fue elaborado con participación del Comité Paritario (o Delegado de SST) y se revisa periódicamente.', ref:'Art. 8, 37'}
+    ],
+    interp:{
+      ok:'El programa preventivo está estructurado y activo. Esto demuestra gestión planificada ante una fiscalización.',
+      warn:'El programa existe pero tiene vacíos en cobertura temática o participación. Conviene completar las áreas que el DS44 exige explícitamente.',
+      crit:'No hay programa preventivo estructurado. Sin un programa documentado, la empresa no puede demostrar gestión preventiva ante un fiscalizador.'
+    }
+  },
+  {
+    id:'info', name:'Información y capacitación',
+    desc:'Derecho a saber y formación preventiva (Art. 15, 16)',
+    questions:[
+      {text:'Cada persona trabajadora, previo al inicio de sus labores y cada vez que sea necesario, recibe información oportuna y adecuada sobre los riesgos de sus tareas, las medidas preventivas y los métodos de trabajo correctos.', ref:'Art. 15'},
+      {text:'Se realizan capacitaciones en prevención de riesgos con enfoque de género, de al menos 8 horas, por entidades acreditadas, y se mantienen registros de asistencia.', ref:'Art. 16'},
+      {text:'Los contenidos de la capacitación se actualizan cuando cambian las condiciones de trabajo, se incorporan nuevos procesos o se detectan nuevos riesgos.', ref:'Art. 16, inc. 2'}
+    ],
+    interp:{
+      ok:'La información y capacitación cumplen con lo exigido. El "derecho a saber" es uno de los pilares del DS44.',
+      warn:'Hay capacitación pero no cumple todos los requisitos (horas, enfoque de género, actualización). Esto es subsanable con ajustes puntuales.',
+      crit:'La información de riesgos es deficiente o inexistente. No informar riesgos fue la materia más sancionada en las primeras fiscalizaciones del DS44.'
+    }
+  },
+  {
+    id:'estructura', name:'Estructura preventiva',
+    desc:'Comité Paritario, Delegado, Encargado y Depto. de Prevención (Art. 23-49, 65, 66)',
+    questions:[
+      {text:'Existe y está en funcionamiento el organismo de participación que corresponde según el tamaño de la empresa: Comité Paritario (más de 25 personas) o Delegado de SST (10 a 25 personas).', ref:'Art. 23, 66', conditional:'medium,large'},
+      {text:'La empresa cuenta con una persona encargada de prevención de riesgos laborales, capacitada por el Organismo Administrador de la Ley 16.744.', ref:'Art. 65'},
+      {text:'Se promueve la participación de las personas trabajadoras y sus representantes en la investigación de accidentes y en la toma de decisiones sobre seguridad.', ref:'Art. 37, 71'}
+    ],
+    interp:{
+      ok:'La estructura preventiva está constituida y funcionando. Esto facilita toda la gestión del DS44.',
+      warn:'Algunos elementos de la estructura preventiva están incompletos. Sin Comité Paritario activo (o Delegado), varias otras obligaciones quedan sin respaldo.',
+      crit:'La estructura preventiva es insuficiente. Sin estos organismos, la empresa no cumple con la base organizacional que el DS44 exige.'
+    }
+  },
+  {
+    id:'rihs', name:'Reglamento Interno de Higiene y Seguridad',
+    desc:'Elaboración, difusión y actualización (Art. 56-61)',
+    questions:[
+      {text:'La empresa cuenta con un Reglamento Interno de Higiene y Seguridad actualizado, entregado gratuitamente a cada persona trabajadora e ingresado en la plataforma de la Dirección del Trabajo.', ref:'Art. 56, 57'},
+      {text:'El Reglamento se revisa con una periodicidad no inferior a un año, con participación del Departamento de Prevención o del Comité Paritario o Delegado de SST.', ref:'Art. 57, inc. 5'},
+      {text:'El Reglamento contiene como mínimo: preámbulo, disposiciones generales, obligaciones de las personas trabajadoras, prohibiciones y sanciones.', ref:'Art. 57, inc. 3'}
+    ],
+    interp:{
+      ok:'El RIHS está al día y correctamente difundido. Es un documento obligatorio para toda empresa, sin importar el tamaño.',
+      warn:'El RIHS existe pero requiere actualización o le faltan secciones obligatorias. Esto es corregible y conviene hacerlo antes de una fiscalización.',
+      crit:'No hay RIHS vigente o no se ha entregado a los trabajadores. Esta es una obligación básica y su incumplimiento es fácilmente detectable.'
+    }
+  },
+  {
+    id:'emergencia', name:'Emergencias y riesgo grave',
+    desc:'Protocolos ante riesgo grave e inminente y plan de emergencias (Art. 18, 19)',
+    questions:[
+      {text:'Existe un procedimiento documentado para actuar ante un riesgo grave e inminente, que incluye la información inmediata a trabajadores afectados y la paralización de actividades si es necesario.', ref:'Art. 18'},
+      {text:'La empresa cuenta con un plan de gestión para la reducción de riesgos de emergencias, catástrofes o desastres, con simulacros periódicos.', ref:'Art. 19'},
+      {text:'Las personas trabajadoras conocen las rutas de evacuación, zonas de seguridad y procedimientos de emergencia aplicables a su lugar de trabajo.', ref:'Art. 19, inc. 2'}
+    ],
+    interp:{
+      ok:'Los protocolos de emergencia están establecidos y son conocidos. Esto protege vidas y reduce responsabilidad legal.',
+      warn:'Existen protocolos pero no están completos o no se han practicado. Sin simulacros, el plan queda en el papel.',
+      crit:'No hay protocolos de emergencia adecuados. Ante un incidente grave, esto expone a la empresa a responsabilidad penal además de administrativa.'
+    }
+  },
+  {
+    id:'investigacion', name:'Investigación y registro de incidentes',
+    desc:'Investigación de accidentes y registro de sucesos peligrosos (Art. 71, 73, 76)',
+    questions:[
+      {text:'Cuando ocurre un accidente del trabajo o se diagnostica una enfermedad profesional, la empresa investiga las causas con enfoque de género y con participación de los trabajadores y sus representantes.', ref:'Art. 71'},
+      {text:'Se registran los incidentes o sucesos peligrosos con potencial de daño en la plataforma del Organismo Administrador, incluyendo causas identificadas y acciones correctivas.', ref:'Art. 73, 76'},
+      {text:'La empresa lleva un registro actualizado de estadísticas de accidentabilidad (tasas de frecuencia y gravedad) y las comunica semestralmente al Comité Paritario.', ref:'Art. 73, 74'}
+    ],
+    interp:{
+      ok:'La investigación y registro de incidentes funcionan correctamente. Esto alimenta la mejora continua del sistema de gestión.',
+      warn:'Se investigan accidentes pero no se registran incidentes potenciales o las estadísticas no están al día. El DS44 amplió las obligaciones de registro.',
+      crit:'No hay investigación sistemática ni registro de incidentes. Esto impide aprender de los eventos y es sancionable.'
+    }
+  }
+];
+
+// ═══ STATE ═══
+let companySize = '';
+let currentDim = 0;
+const answers = {};
+
+function showSizeSelector() {
+  document.getElementById('intro').style.display = 'none';
+  document.getElementById('sizeSelector').style.display = 'block';
+}
+
+function selectSize(size, el) {
+  companySize = size;
+  document.querySelectorAll('.size-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('btnSizeNext').disabled = false;
+}
+
+function startQuiz() {
+  document.getElementById('sizeSelector').style.display = 'none';
+  document.getElementById('progressWrap').style.display = 'block';
+  buildQuestions();
+  document.getElementById('dim-0').style.display = 'block';
+  updateProgress();
+}
+
+function buildQuestions() {
+  const c = document.getElementById('qContainer');
+  c.innerHTML = '';
+  dims.forEach((dim, di) => {
+    const sec = document.createElement('div');
+    sec.className = 'q-section';
+    sec.id = `dim-${di}`;
+    let h = `<div class="q-dim-title">${dim.name}</div><div class="q-dim-desc">${dim.desc}</div>`;
+    dim.questions.forEach((q, qi) => {
+      // Skip conditional questions based on size
+      if (q.conditional && !q.conditional.split(',').includes(companySize)) {
+        answers[`q-${di}-${qi}`] = 'na';
+        return;
+      }
+      const qid = `q-${di}-${qi}`;
+      h += `<div class="q-card"><p>${q.text}</p><div class="q-ref">${q.ref}</div><div class="q-options">`;
+      const opts = [
+        {val:'yes', label:'Cumple', cls:'opt-yes'},
+        {val:'partial', label:'Cumple parcialmente', cls:'opt-partial'},
+        {val:'no', label:'No cumple', cls:'opt-no'},
+        {val:'na', label:'No aplica', cls:'opt-na'}
+      ];
+      opts.forEach(o => {
+        h += `<label><input type="radio" name="${qid}" value="${o.val}" onchange="onAns('${qid}','${o.val}')"><span class="q-opt-btn ${o.cls}">${o.label}</span></label>`;
+      });
+      h += '</div></div>';
+    });
+    h += '<div class="nav-btns">';
+    if (di > 0) h += `<button class="btn-back" onclick="goDim(${di-1})">Anterior</button>`;
+    h += `<button class="btn-next" id="next-${di}" onclick="${di < dims.length-1 ? `goDim(${di+1})` : 'showResults()'}" disabled>${di < dims.length-1 ? 'Siguiente' : 'Ver resultados'}</button>`;
+    h += '</div>';
+    sec.innerHTML = h;
+    c.appendChild(sec);
+  });
+}
+
+function onAns(qid, val) {
+  answers[qid] = val;
+  checkComplete(currentDim);
+}
+
+function checkComplete(di) {
+  const qs = dims[di].questions;
+  let done = 0, total = 0;
+  qs.forEach((q, qi) => {
+    if (q.conditional && !q.conditional.split(',').includes(companySize)) return;
+    total++;
+    if (answers[`q-${di}-${qi}`]) done++;
+  });
+  const btn = document.getElementById(`next-${di}`);
+  if (btn) btn.disabled = done < total;
+}
+
+function updateProgress() {
+  const pct = (currentDim / dims.length) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressDim').textContent = dims[currentDim].name;
+  document.getElementById('progressCount').textContent = `${currentDim + 1} de ${dims.length}`;
+}
+
+function goDim(di) {
+  document.getElementById(`dim-${currentDim}`).style.display = 'none';
+  currentDim = di;
+  const s = document.getElementById(`dim-${currentDim}`);
+  s.style.display = 'block';
+  s.style.animation = 'none';
+  void s.offsetHeight;
+  s.style.animation = 'fadeIn 0.3s ease';
+  updateProgress();
+  checkComplete(currentDim);
+  window.scrollTo({top: 0, behavior:'smooth'});
+}
+
+function calcScores() {
+  return dims.map((dim, di) => {
+    let pts = 0, max = 0;
+    dim.questions.forEach((q, qi) => {
+      const a = answers[`q-${di}-${qi}`];
+      if (a === 'na') return;
+      max += 2;
+      if (a === 'yes') pts += 2;
+      else if (a === 'partial') pts += 1;
+    });
+    return max > 0 ? Math.round((pts / max) * 100) : -1;
+  });
+}
+
+function showResults() {
+  document.getElementById(`dim-${currentDim}`).style.display = 'none';
+  document.getElementById('progressWrap').style.display = 'none';
+  document.getElementById('results').style.display = 'block';
+
+  const scores = calcScores();
+  const valid = scores.filter(s => s >= 0);
+  const global = Math.round(valid.reduce((a,b) => a+b, 0) / valid.length);
+
+  document.getElementById('scoreNum').textContent = global;
+
+  // Ring
+  const ring = document.getElementById('ringFill');
+  const circ = 301.6;
+  const offset = circ - (circ * global / 100);
+  const color = global >= 75 ? 'var(--green)' : global >= 45 ? 'var(--amber)' : 'var(--red)';
+  ring.style.stroke = color;
+  setTimeout(() => { ring.style.strokeDashoffset = offset; }, 100);
+
+  // Title
+  let title, desc;
+  if (global >= 75) {
+    title = 'Cumplimiento sólido';
+    desc = 'Tu operación muestra buen nivel de cumplimiento con el DS44. Revisa las dimensiones con puntaje menor para cerrar brechas residuales antes de una fiscalización.';
+  } else if (global >= 45) {
+    title = 'Cumplimiento parcial';
+    desc = 'Hay avances, pero existen brechas que un fiscalizador detectaría. Las dimensiones en amarillo y rojo requieren atención prioritaria.';
+  } else {
+    title = 'Brechas críticas';
+    desc = 'El nivel de cumplimiento es bajo y expone a la operación a sanciones. Conviene abordar las dimensiones más críticas de forma urgente.';
+  }
+  document.getElementById('resultTitle').textContent = title;
+  document.getElementById('resultDesc').textContent = desc;
+
+  // Cards
+  const dc = document.getElementById('dimCards');
+  dc.innerHTML = '';
+  scores.forEach((s, i) => {
+    if (s < 0) return;
+    const dim = dims[i];
+    let level, icon, pctColor, interpText;
+    if (s >= 75) { level='ok'; icon='✓'; pctColor='var(--green)'; interpText=dim.interp.ok; }
+    else if (s >= 45) { level='warn'; icon='!'; pctColor='var(--amber)'; interpText=dim.interp.warn; }
+    else { level='crit'; icon='✕'; pctColor='var(--red)'; interpText=dim.interp.crit; }
+    dc.innerHTML += `
+      <div class="dim-card">
+        <div class="dim-icon ${level}">${icon}</div>
+        <div class="dim-info">
+          <h4>${dim.name}</h4>
+          <div class="dim-text">${interpText}</div>
+        </div>
+        <div class="dim-pct" style="color:${pctColor}">${s}%</div>
+      </div>`;
+  });
+
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function resetQuiz() {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  currentDim = 0;
+  companySize = '';
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('intro').style.display = 'block';
+  document.querySelectorAll('.size-opt').forEach(o => o.classList.remove('selected'));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+</script>
+</body>
+</html>
