@@ -137,6 +137,21 @@ body {
   max-width: 680px;
   margin-bottom: 20px;
 }
+.hero-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  margin-bottom: 20px;
+}
+.hero-logo {
+  height: clamp(70px, 10vw, 100px);
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.hero-title-row h1 {
+  margin-bottom: 0;
+}
 .hero h1 em {
   font-style: normal;
   font-weight: 300;
@@ -627,6 +642,8 @@ body {
   .photo-break { grid-template-columns: 1fr; height: 200px; }
   .photo-break-img:nth-child(2) { display: none; }
   .hero h1 { font-size: 32px; }
+  .hero-title-row { flex-direction: column; gap: 16px; }
+  .hero-logo { height: 56px; }
   .hero { min-height: 80vh; }
   .logos-bar { gap: 20px; }
   .logos-bar img { height: 24px; }
@@ -660,7 +677,10 @@ body {
   <div class="hero-gradient"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow">Labor Omnia Vincit</div>
-    <h1>Gestión de Talento y <em>Desarrollo Organizacional</em></h1>
+    <div class="hero-title-row">
+      <img src="logo.png" alt="Labor HR" class="hero-logo">
+      <h1>Gestión de Talento y <em>Desarrollo Organizacional</em></h1>
+    </div>
     <p class="hero-sub">Somos socios estratégicos que combinan visión comercial con presencia real en la operación. Especialistas en minería, infraestructura y agroindustria en Chile.</p>
     <div class="hero-btns">
       <a href="#contacto" class="btn btn-teal">Hablemos de tu desafío</a>
