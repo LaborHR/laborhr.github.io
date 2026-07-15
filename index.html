@@ -119,7 +119,21 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   padding: clamp(60px, 12vw, 120px) clamp(24px, 5vw, 48px);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(32px, 5vw, 56px);
+  align-items: center;
 }
+.hero-logo-col {
+  display: flex;
+  align-items: center;
+}
+.hero-logo {
+  height: clamp(100px, 15vw, 170px);
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+.hero-text-col {}
 .hero-eyebrow {
   font-size: 12px;
   font-weight: 600;
@@ -137,28 +151,13 @@ body {
   max-width: 680px;
   margin-bottom: 20px;
 }
-.hero-title-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 28px;
-  margin-bottom: 20px;
-}
-.hero-logo {
-  height: clamp(70px, 10vw, 100px);
-  filter: brightness(0) invert(1);
-  flex-shrink: 0;
-  margin-top: 6px;
-}
-.hero-title-row h1 {
-  margin-bottom: 0;
-}
 .hero h1 em {
   font-style: normal;
   font-weight: 300;
   color: rgba(255,255,255,0.7);
 }
 .hero-sub {
-  font-size: clamp(16px, 2vw, 19px);
+  font-size: clamp(17px, 2.2vw, 20px);
   color: rgba(255,255,255,0.65);
   max-width: 520px;
   line-height: 1.7;
@@ -642,8 +641,11 @@ body {
   .photo-break { grid-template-columns: 1fr; height: 200px; }
   .photo-break-img:nth-child(2) { display: none; }
   .hero h1 { font-size: 32px; }
-  .hero-title-row { flex-direction: column; gap: 16px; }
-  .hero-logo { height: 56px; }
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-logo-col { justify-content: center; }
+  .hero-logo { height: 72px; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-btns { justify-content: center; }
   .hero { min-height: 80vh; }
   .logos-bar { gap: 20px; }
   .logos-bar img { height: 24px; }
@@ -676,15 +678,17 @@ body {
   <div class="hero-topo"></div>
   <div class="hero-gradient"></div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">Labor Omnia Vincit</div>
-    <div class="hero-title-row">
+    <div class="hero-logo-col">
       <img src="logo.png" alt="Labor HR" class="hero-logo">
-      <h1>Gestión de Talento y <em>Desarrollo Organizacional</em></h1>
     </div>
-    <p class="hero-sub">Somos socios estratégicos que combinan visión comercial con presencia real en la operación. Especialistas en minería, infraestructura y agroindustria en Chile.</p>
-    <div class="hero-btns">
-      <a href="#contacto" class="btn btn-teal">Hablemos de tu desafío</a>
-      <a href="#servicios" class="btn btn-outline">Conoce nuestras soluciones</a>
+    <div class="hero-text-col">
+      <div class="hero-eyebrow">Labor Omnia Vincit</div>
+      <h1>Gestión de Talento y <em>Desarrollo Organizacional</em></h1>
+      <p class="hero-sub">Somos socios estratégicos que combinan visión comercial con presencia real en la operación. Especialistas en minería, infraestructura y agroindustria en Chile.</p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn btn-teal">Hablemos de tu desafío</a>
+        <a href="#servicios" class="btn btn-outline">Conoce nuestras soluciones</a>
+      </div>
     </div>
   </div>
 </section>
