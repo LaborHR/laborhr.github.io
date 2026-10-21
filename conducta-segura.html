@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conducta Segura: Evaluación y Liderazgo en Seguridad | Labor HR Chile</title>
+    <meta name="description" content="Evaluación de conducta segura en selección, diagnóstico de equipos en operación y talleres de liderazgo en seguridad. Tecnología de test oculto que mide impulsividad, propensión al riesgo y locus de control. Labor HR Chile.">
+    <meta name="keywords" content="evaluación conducta segura, evaluación psicolaboral seguridad, selección personal minería, aversión al riesgo evaluación, conducta segura reclutamiento, evaluación seguridad laboral Chile, locus de control seguridad, liderazgo en seguridad, taller liderazgo seguridad, diagnóstico conducta segura equipos, seguridad conductual minería">
+    <link rel="canonical" href="https://laborhr.cl/conducta-segura.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #162A3E; --navy-mid: #1E3A52; --navy-deep: #0E1C2A;
+            --accent: #162A3E; --accent-light: #1C3450; --accent-pale: #F1F3F5;
+            --white: #FFFFFF; --gray-50: #F5F6F8; --gray-100: #ECEEF1;
+            --gray-200: #D8DDE3; --gray-400: #8E99A4; --gray-500: #6B7785;
+            --gray-600: #4A5568; --gray-800: #2D3748;
+            --font-display: 'Outfit', system-ui, sans-serif; --slate-900: #0F172A;
+            --font-body: 'Outfit', system-ui, sans-serif;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); color: var(--gray-800); line-height: 1.65; background: var(--white); }
+
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(22,42,62,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 0 clamp(20px,4vw,48px); height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .nav-logo { height: 24px; filter: brightness(0) invert(1); }
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--white); }
+        .nav-links .nav-cta { background: var(--white); color: var(--navy); padding: 8px 20px; border-radius: 6px; font-weight: 600; }
+        .nav-links .nav-cta:hover { background: var(--gray-200); }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; }
+
+        .page-hero { padding: 140px 2rem 80px; background: var(--navy); position: relative; overflow: hidden; }
+        .hero-grid { position: absolute; inset: 0; opacity: 0.05; background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.4) 39px, rgba(255,255,255,0.4) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.4) 39px, rgba(255,255,255,0.4) 40px); }
+        .page-hero-inner { max-width: 720px; margin: 0 auto; position: relative; }
+        .breadcrumb { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; font-weight: 300; }
+        .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .page-hero h1 { font-family: var(--font-display); font-size: clamp(30px, 5vw, 44px); color: var(--white); line-height: 1.15; margin-bottom: 1.2rem; font-weight: 800; }
+        .page-hero h1 em { font-style: normal; font-weight: 300; color: rgba(255,255,255,0.7); }
+        .page-hero .lead { color: rgba(255,255,255,0.6); font-size: 1.05rem; line-height: 1.8; font-weight: 300; max-width: 620px; }
+
+        .content { padding: 4rem 2rem; }
+        .content-inner { max-width: 720px; margin: 0 auto; }
+        .content h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--slate-900); margin: 3rem 0 1rem; font-weight: 700; line-height: 1.35; }
+        .content h2:first-child { margin-top: 0; }
+        .content p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; font-weight: 300; }
+        .content strong { font-weight: 500; color: var(--gray-800); }
+
+        /* EJES */
+        .ejes { background: var(--navy); color: var(--white); padding: 4rem 2rem; }
+        .ejes-inner { max-width: 720px; margin: 0 auto; }
+        .ejes h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); margin-bottom: 0.5rem; font-weight: 700; }
+        .ejes .subtitle { color: rgba(255,255,255,0.5); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 300; }
+        .ejes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+        .eje-card {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px; padding: 1.8rem; text-align: center;
+        }
+        .eje-card h4 { font-family: var(--font-display); color: var(--white); font-size: 1rem; margin-bottom: 0.5rem; font-weight: 600; }
+        .eje-card p { color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.7; font-weight: 300; }
+
+        /* PROCESO */
+        .proceso { padding: 4rem 2rem; background: var(--white); }
+        .proceso-inner { max-width: 720px; margin: 0 auto; }
+        .proceso h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--slate-900); margin-bottom: 2rem; font-weight: 700; }
+        .paso {
+            display: grid; grid-template-columns: 48px 1fr; gap: 1.2rem;
+            padding: 1.5rem 0; border-bottom: 1px solid var(--gray-100);
+        }
+        .paso:last-child { border-bottom: none; }
+        .paso-num {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: var(--gray-50); border: 1.5px solid var(--navy);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--navy);
+        }
+        .paso h4 { font-family: var(--font-display); color: var(--navy); font-size: 1rem; margin-bottom: 0.3rem; font-weight: 600; }
+        .paso p { color: var(--gray-500); font-size: 0.9rem; line-height: 1.7; font-weight: 300; }
+
+        /* ENTREVISTA */
+        .entrevista { padding: 4rem 2rem; background: var(--gray-50); border-top: 1px solid var(--gray-100); }
+        .entrevista-inner { max-width: 720px; margin: 0 auto; }
+        .entrevista h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--slate-900); margin-bottom: 1rem; font-weight: 700; }
+        .entrevista p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; font-weight: 300; }
+        .entrevista-points { margin: 1.5rem 0; }
+        .e-point {
+            border-left: 2px solid var(--accent); padding: 0.8rem 0 0.8rem 1.2rem; margin-bottom: 1rem;
+        }
+        .e-point h4 { font-family: var(--font-display); color: var(--navy); font-size: 0.95rem; margin-bottom: 0.2rem; font-weight: 600; }
+        .e-point p { color: var(--gray-500); font-size: 0.88rem; line-height: 1.7; margin-bottom: 0; }
+
+        /* ENTRADAS */
+        .entradas { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.5rem 0 0.5rem; }
+        .entrada { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 6px; padding: 1.5rem; }
+        .entrada .tag { font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-400); font-weight: 500; margin-bottom: 0.4rem; }
+        .entrada h4 { font-family: var(--font-display); color: var(--navy); font-size: 1.05rem; margin-bottom: 0.4rem; font-weight: 600; }
+        .entrada p { color: var(--gray-500); font-size: 0.88rem; line-height: 1.7; margin-bottom: 0; }
+        .proceso.alt { background: var(--gray-50); border-top: 1px solid var(--gray-100); }
+        .proceso .intro { color: var(--gray-500); font-size: 0.95rem; line-height: 1.8; font-weight: 300; margin: -1.2rem 0 1.5rem; }
+        .sence { margin-top: 1.5rem; padding: 1rem 1.2rem; border-left: 2px solid var(--accent); background: var(--white); color: var(--gray-600); font-size: 0.9rem; line-height: 1.7; font-weight: 300; }
+        .sence strong { font-weight: 500; color: var(--gray-800); }
+
+        /* CTA */
+        .cta-section { background: var(--white); padding: 4rem 2rem; text-align: center; border-top: 1px solid var(--gray-100); }
+        .cta-section h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.8rem; font-weight: 700; }
+        .cta-section p { color: var(--gray-500); font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: 300; }
+        .btn-primary { background: var(--navy); color: var(--white); padding: 0.85rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.92rem; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--navy-mid); }
+
+        .footer { background: var(--slate-900); padding: 24px clamp(24px,5vw,48px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .footer-left { font-size: 12px; color: #919EAB; }
+        .footer-left a { color: #919EAB; text-decoration: none; }
+        .footer-motto { font-size: 12px; color: #637381; font-style: italic; }
+
+        @media (max-width: 960px) {
+            .ejes-grid { grid-template-columns: 1fr; }
+            .entradas { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); flex-direction: column; padding: 20px 24px; gap: 16px; }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+            .page-hero { padding: 120px 1.5rem 3.5rem; }
+            .content, .proceso, .entrevista, .cta-section { padding: 3rem 1.5rem; }
+            .ejes { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/"><img src="logo.png" alt="Labor HR" class="nav-logo"></a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="/#servicios">Soluciones</a>
+    <a href="/#mineria">Minería</a>
+    <a href="/#clientes">Clientes</a>
+    <a href="/#director">Dirección</a>
+    <a href="coaching-adc.html">Coaching ADC</a>
+    <a href="conducta-segura.html" style="color:var(--white);">Conducta Segura</a>
+    <a href="recursos.html">Recursos</a>
+    <a href="/#contacto" class="nav-cta">Conversemos</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+    <div class="hero-grid"></div>
+    <div class="page-hero-inner">
+        <div class="breadcrumb"><a href="index.html">Labor HR</a> / Conducta Segura</div>
+        <h1>Conducta segura <em>de la evaluación al desarrollo</em></h1>
+        <p class="lead">En entornos de alto riesgo, la seguridad depende de las decisiones que las personas toman en terreno. Evaluamos la conducta segura antes del ingreso, diagnosticamos a los equipos que ya están en la operación y desarrollamos el liderazgo en seguridad que cada brecha necesita.</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="content-inner">
+        <h2>Por qué la evaluación tradicional no alcanza</h2>
+        <p>En industrias como la minería, energía e infraestructura, la seguridad operacional depende de las personas que toman decisiones en terreno. Los estándares técnicos y normativos han evolucionado, pero <strong>el factor humano sigue siendo la variable crítica</strong> para garantizar entornos libres de accidentes.</p>
+        <p>La evaluación psicolaboral convencional resulta insuficiente cuando no profundiza en las competencias conductuales específicas para la gestión del riesgo. No basta con evaluar aptitud técnica; es fundamental identificar la predisposición psicológica del candidato hacia el autocuidado, el apego a las normas y la capacidad de mantener atención sostenida en entornos hostiles y rutinarios.</p>
+        <p>Nuestro enfoque se centra en detectar perfiles que posean una <strong>aversión natural al riesgo</strong>, asegurando que quienes se integran a la operación actúen como barreras de seguridad y no como fuentes de peligro.</p>
+
+        <h2>Dos puntos de entrada</h2>
+        <p>La misma metodología se aplica en dos momentos distintos de la vida de un equipo.</p>
+        <div class="entradas">
+            <div class="entrada">
+                <div class="tag">Antes del ingreso</div>
+                <h4>Selección</h4>
+                <p>Evaluamos a cada candidato antes de que llegue a terreno, para incorporar personas que gestionan el riesgo con criterio desde el primer día.</p>
+            </div>
+            <div class="entrada">
+                <div class="tag">Durante la operación</div>
+                <h4>Equipos en funciones</h4>
+                <p>Diagnosticamos y desarrollamos a los equipos que ya están en la operación: después de un incidente, cuando el mandante lo exige o como medida preventiva.</p>
+            </div>
+        </div>
+
+        <h2>Cómo funciona nuestra evaluación</h2>
+        <p>Integramos una batería de evaluación evidence-based diseñada para triangular capacidad cognitiva, rasgos de personalidad y, críticamente para la operación, la conducta segura frente al riesgo. Lo que hace diferente a nuestra herramienta es una característica central: <strong>las preguntas de seguridad están ocultas y aleatorizadas dentro del cuestionario de personalidad</strong>.</p>
+        <p>Al estar integradas de forma invisible, anulan la deseabilidad social: el intento natural de la persona evaluada de parecer más segura de lo que realmente es. No es posible identificar ni manipular las preguntas que miden seguridad. El resultado refleja la predisposición real de la persona, no su capacidad de dar la respuesta esperada.</p>
+    </div>
+</section>
+
+<section class="ejes">
+    <div class="ejes-inner">
+        <h2>Tres ejes de evaluación</h2>
+        <p class="subtitle">Lo que medimos para predecir comportamientos seguros en entornos críticos.</p>
+        <div class="ejes-grid">
+            <div class="eje-card">
+                <h4>Impulsividad</h4>
+                <p>Capacidad de la persona para detenerse antes de actuar. Evaluamos si toma decisiones reflexivas o reactivas bajo presión, especialmente en situaciones donde la prisa puede comprometer la seguridad.</p>
+            </div>
+            <div class="eje-card">
+                <h4>Propensión al Riesgo</h4>
+                <p>Grado de comodidad frente a situaciones de riesgo. Diferenciamos entre quienes naturalmente buscan mitigar el peligro y quienes tienden a subestimarlo o normalizarlo.</p>
+            </div>
+            <div class="eje-card">
+                <h4>Locus de Control</h4>
+                <p>¿La persona asume la seguridad como responsabilidad propia (interno) o tiende a culpar al entorno o la suerte ante un accidente (externo)? Este eje predice la capacidad de autocuidado activo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="proceso alt">
+    <div class="proceso-inner">
+        <h2>Equipos en operación: el ciclo completo</h2>
+        <p class="intro">Cuando el equipo ya está en terreno, la evaluación es el punto de partida. Lo que genera el cambio es lo que viene después.</p>
+        <div class="paso">
+            <div class="paso-num">1</div>
+            <div>
+                <h4>Diagnóstico</h4>
+                <p>Aplicamos la batería con índice de seguridad y una entrevista centrada en incidentes críticos a cada integrante del equipo. La evaluación se plantea como diagnóstico de desarrollo, para entender cómo cada persona gestiona el riesgo en su día a día.</p>
+            </div>
+        </div>
+        <div class="paso">
+            <div class="paso-num">2</div>
+            <div>
+                <h4>Feedback</h4>
+                <p>Cada persona recibe una devolución individual de sus resultados. La jefatura recibe un informe consolidado con los patrones del equipo y las brechas prioritarias, que sirve de base para diseñar la intervención.</p>
+            </div>
+        </div>
+        <div class="paso">
+            <div class="paso-num">3</div>
+            <div>
+                <h4>Talleres de liderazgo en seguridad</h4>
+                <p>Diseñamos los talleres a partir de las brechas detectadas, en módulos que se adaptan a los turnos de la operación. Cada taller deja evidencias concretas que la empresa puede presentar a su mandante.</p>
+            </div>
+        </div>
+        <div class="sence"><strong>Financiamiento SENCE.</strong> Los programas de desarrollo pueden financiarse con la franquicia tributaria SENCE, a través de un OTEC asociado.</div>
+    </div>
+</section>
+
+<section class="proceso">
+    <div class="proceso-inner">
+        <h2>En selección: el proceso paso a paso</h2>
+        <div class="paso">
+            <div class="paso-num">1</div>
+            <div>
+                <h4>Definición del perfil de cargo</h4>
+                <p>Definimos un perfil preciso que destaca competencias clave, responsabilidades y conductas a evaluar según la naturaleza del cargo y el contexto operativo.</p>
+            </div>
+        </div>
+        <div class="paso">
+            <div class="paso-num">2</div>
+            <div>
+                <h4>Coordinación de entrevistas</h4>
+                <p>Una vez recibidos los antecedentes, contactamos a los candidatos para coordinar la aplicación de tests y entrevista. El agendamiento no toma más de 48 horas.</p>
+            </div>
+        </div>
+        <div class="paso">
+            <div class="paso-num">3</div>
+            <div>
+                <h4>Evaluación psicolaboral y fit cultural</h4>
+                <p>Combinamos la batería de tests (agilidad cognitiva + perfil conductual + índice de seguridad), referencias e instrumentos complementarios para evaluar competencias clave en situaciones reales.</p>
+            </div>
+        </div>
+        <div class="paso">
+            <div class="paso-num">4</div>
+            <div>
+                <h4>Informe de evaluación</h4>
+                <p>Entregamos un reporte integral que combina resultados psicométricos, hallazgos de entrevista y análisis de fortalezas, áreas de mejora y compatibilidad con el cargo. Entrega en 2 horas para tests y 48 horas para entrevistas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="entrevista">
+    <div class="entrevista-inner">
+        <h2>La entrevista de "Criterio Prudente"</h2>
+        <p>La entrevista no es una instancia aislada. Nuestros consultores utilizan los resultados del índice de seguridad como mapa de navegación para profundizar en las zonas de riesgo detectadas. La usamos tanto en selección como en el diagnóstico de equipos en operación.</p>
+        <div class="entrevista-points">
+            <div class="e-point">
+                <h4>Validación de hallazgos psicométricos</h4>
+                <p>Confirmamos o descartamos las alertas del test buscando evidencias conductuales específicas mediante metodología STAR en situaciones de presión temporal o incertidumbre.</p>
+            </div>
+            <div class="e-point">
+                <h4>Indagación de incidentes críticos</h4>
+                <p>Exploramos cómo la persona ha gestionado la tensión entre cumplimiento de plazos y cumplimiento de normas. Evaluamos el locus de control a través del análisis de errores o cuasi-accidentes previos.</p>
+            </div>
+            <div class="e-point">
+                <h4>Evaluación del criterio prudente</h4>
+                <p>Evaluamos la madurez de la persona para ejercer la autoridad de detener una faena insegura (Stop Work Authority), diferenciando a quien sigue la regla por obligación de quien la sigue por convicción.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>¿Quieres evaluar o desarrollar conducta segura en tu operación?</h2>
+    <p>Conversemos sobre cómo aplicarlo en tu proceso de selección o con los equipos que ya están en terreno.</p>
+    <a href="https://wa.me/56996747563" class="btn-primary" target="_blank">Escribir por WhatsApp</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-left">&copy; 2026 <a href="/">Labor HR</a> Gestión de Talento. Santiago, Chile.</div>
+  <div class="footer-motto">Labor Omnia Vincit</div>
+</footer>
+
+</body>
+</html>
