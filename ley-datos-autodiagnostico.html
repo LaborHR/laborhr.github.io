@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autodiagnóstico Ley de Datos Personales para RRHH | Labor HR</title>
+<meta name="description" content="Autodiagnóstico gratuito de 15 preguntas para que equipos de RRHH revisen cómo tratan los datos de candidatos y trabajadores frente a la Ley 21.719.">
+<link rel="canonical" href="https://laborhr.cl/ley-datos-autodiagnostico.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#162A3E;
+  --ink:#1f2933;
+  --gray:#5f6b76;
+  --line:#dde2e7;
+  --soft:#f4f6f8;
+  --white:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;font-weight:300}
+a{color:var(--navy)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(22,42,62,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:0 clamp(20px,4vw,48px);height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-logo{height:24px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.3px;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links .nav-cta{background:#fff;color:var(--navy);padding:8px 20px;border-radius:6px;font-weight:600}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;width:auto;margin:0}
+.nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
+.wrap{max-width:780px;margin:0 auto;padding:112px 24px 80px}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;color:var(--gray);font-weight:500}
+h1{color:#0F172A;font-size:clamp(28px,5vw,38px);font-weight:800;line-height:1.15;margin:12px 0 18px}
+h2{color:#0F172A;font-size:20px;font-weight:700;margin:0 0 6px}
+.lead{font-size:18px;color:var(--gray);margin-bottom:24px}
+.note{background:var(--soft);border-left:3px solid var(--navy);padding:16px 18px;font-size:14px;color:var(--gray);margin-bottom:12px}
+.note strong{color:var(--ink);font-weight:500}
+.section{margin-top:44px}
+.section-desc{font-size:14px;color:var(--gray);margin-bottom:18px}
+.q{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:12px;background:var(--white)}
+.q p{font-weight:400;margin-bottom:12px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opts label{flex:1;min-width:110px;border:1px solid var(--line);border-radius:6px;padding:9px 12px;text-align:center;cursor:pointer;font-size:14px;transition:all .15s}
+.opts input{display:none}
+.opts input:checked + span{font-weight:500}
+.opts label:has(input:checked){background:var(--navy);color:var(--white);border-color:var(--navy)}
+.opts label:hover{border-color:var(--navy)}
+.progress{position:sticky;top:64px;background:var(--white);padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--gray);z-index:5}
+.bar{height:4px;background:var(--line);margin-top:6px}
+.bar div{height:4px;background:var(--navy);width:0;transition:width .2s}
+button{font-family:'Outfit',sans-serif;background:var(--navy);color:var(--white);border:none;border-radius:6px;padding:15px 28px;font-size:16px;font-weight:600;cursor:pointer;margin-top:28px;width:100%}
+button:disabled{background:#9aa5b0;cursor:not-allowed}
+#result{display:none;margin-top:48px;border-top:2px solid var(--navy);padding-top:36px;scroll-margin-top:130px}
+.score{font-size:52px;font-weight:800;color:var(--navy)}
+.score small{font-size:20px;color:var(--gray)}
+.level{font-size:20px;font-weight:500;margin:6px 0 10px}
+.blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:24px 0 32px}
+.block{border:1px solid var(--line);padding:14px}
+.block .name{font-size:13px;color:var(--gray)}
+.block .val{font-size:22px;font-weight:500;color:var(--navy)}
+.block .mini{height:4px;background:var(--line);margin-top:8px}
+.block .mini div{height:4px;background:var(--navy)}
+.tips h3{color:#0F172A;font-size:18px;font-weight:700;margin:26px 0 12px}
+.tip{padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.tip .tag{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gray)}
+.tip .t{font-weight:400;margin:2px 0 4px}
+.tip .r{color:var(--gray)}
+.cta{background:var(--navy);color:var(--white);padding:28px;margin-top:36px;border-radius:12px}
+.cta h3{font-size:20px;font-weight:700;margin-bottom:8px}
+.cta p{font-size:15px;opacity:.9}
+.cta a{color:var(--white);font-weight:500}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.actions button{width:auto;flex:1;background:var(--white);color:var(--navy);border:1px solid var(--navy)}
+footer{background:#0F172A;padding:24px clamp(24px,5vw,48px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:#919EAB}
+footer a{color:#919EAB;text-decoration:none}
+.footer-motto{color:#637381;font-style:italic}
+@media print{.nav,.progress,#form,button,.actions,footer{display:none!important}#result{display:block!important;border:none;margin:0;padding:0}.cta{background:none;color:var(--ink);border:1px solid var(--line)}.cta a{color:var(--navy)}}
+@media(max-width:640px){.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px 24px;gap:16px}.nav-links.open{display:flex}.nav-toggle{display:block}.opts label{min-width:0}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/"><img src="logo.png" alt="Labor HR" class="nav-logo"></a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="/#servicios">Soluciones</a>
+    <a href="/#mineria">Minería</a>
+    <a href="/#clientes">Clientes</a>
+    <a href="coaching-adc.html">Coaching ADC</a>
+    <a href="conducta-segura.html">Conducta Segura</a>
+    <a href="recursos.html">Recursos</a>
+    <a href="/#contacto" class="nav-cta">Conversemos</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div class="eyebrow">Recurso gratuito · Ley 21.719</div>
+  <h1>¿Cómo trata tu área de personas los datos de candidatos y trabajadores?</h1>
+  <p class="lead">15 preguntas para detectar dónde están las brechas en selección, gestión de trabajadores, accesos y proveedores. Toma unos 5 minutos.</p>
+
+  <div class="note">
+    <strong>Sobre los plazos.</strong> La Ley 21.719 tiene como fecha de entrada en vigencia el 1 de diciembre de 2026. Existe un proyecto en el Senado (boletín 18.623-07) que propone postergarla al 1 de diciembre de 2027, manteniendo las mismas obligaciones. Con cualquiera de las dos fechas, el trabajo de adecuación es el mismo.
+  </div>
+  <div class="note">
+    <strong>Tus respuestas no salen de tu computador.</strong> El resultado se calcula en tu navegador y no se guarda ni se envía a ningún servidor. Esta herramienta es orientativa y no constituye asesoría legal.
+  </div>
+
+  <div class="progress" id="progress">
+    <span id="ptext">0 de 15 respondidas</span>
+    <div class="bar"><div id="pbar"></div></div>
+  </div>
+
+  <form id="form"></form>
+  <button id="calc" disabled>Ver mi resultado</button>
+
+  <section id="result"></section>
+</main>
+
+<footer>
+  <div>&copy; 2026 <a href="/">Labor HR</a> Gestión de Talento. Santiago, Chile. · <a href="mailto:contacto@laborhr.cl">contacto@laborhr.cl</a></div>
+  <div class="footer-motto">Labor Omnia Vincit</div>
+</footer>
+
+<script>
+const SECTIONS = [
+  {
+    id:"sel", name:"Selección y candidatos",
+    desc:"Lo que pasa con los datos de quienes postulan, queden o no.",
+    qs:[
+      {t:"¿Tienen definido cuánto tiempo guardan los CV y antecedentes de los candidatos que no fueron seleccionados?",
+       r:"Define un plazo de conservación y cúmplelo. Si quieres mantener candidatos para futuras búsquedas, pídeles autorización expresa para eso."},
+      {t:"¿Los avisos o formularios de postulación informan para qué se usarán los datos y quién tendrá acceso a ellos?",
+       r:"Agrega un texto breve en avisos y formularios: finalidad, quién verá la información y cómo pedir su eliminación."},
+      {t:"¿Piden informe comercial solo para cargos que administran fondos o tienen facultades de administración?",
+       r:"Revisa los perfiles a los que se pide informe comercial. El Código del Trabajo limita esta exigencia a cargos específicos y la nueva ley refuerza el criterio de proporcionalidad."},
+      {t:"Cuando un tercero (consultora, plataforma, psicólogo externo) evalúa o valida antecedentes, ¿el candidato lo sabe y lo autoriza antes?",
+       r:"Avisa al candidato quién lo va a contactar, de parte de quién y para qué, y deja registro de su autorización antes de que el tercero inicie el proceso."}
+    ]
+  },
+  {
+    id:"trab", name:"Datos de trabajadores",
+    desc:"La información que la empresa acumula durante toda la relación laboral.",
+    qs:[
+      {t:"¿Tienen un inventario de qué datos de trabajadores tratan, para qué los usan y dónde están guardados?",
+       r:"Arma un registro simple: tipo de dato, finalidad, dónde vive (sistema, carpeta, proveedor), quién accede y por cuánto tiempo se guarda. Es la base de todo lo demás."},
+      {t:"¿La información de salud (exámenes preocupacionales, licencias, fichas médicas) está separada del resto y con acceso restringido?",
+       r:"Los datos de salud son datos sensibles. Sepáralos de la carpeta general del trabajador y limita el acceso a quienes realmente lo necesitan."},
+      {t:"Si usan huella o reconocimiento facial para control de asistencia, ¿cuentan con el consentimiento expreso de cada trabajador?",
+       r:"Los datos biométricos son sensibles. Verifica que exista consentimiento expreso y documentado, y una alternativa para quien no lo otorgue."},
+      {t:"¿Revisaron si los datos sensibles que ya tienen guardados cuentan con una autorización vigente para seguir usándolos?",
+       r:"Que un dato se haya entregado antes no significa que se pueda seguir usando igual. Revisa la base de autorización de los datos sensibles históricos."}
+    ]
+  },
+  {
+    id:"acc", name:"Accesos y seguridad",
+    desc:"Quién puede ver qué, y qué pasa cuando algo sale mal.",
+    qs:[
+      {t:"¿Los informes psicolaborales y evaluaciones se comparten por canales con acceso controlado, en lugar de adjuntos sueltos por correo?",
+       r:"Mueve los informes a una carpeta o plataforma con permisos por persona. Un adjunto reenviado queda fuera de control para siempre."},
+      {t:"Cuando alguien deja la empresa o cambia de área, ¿se revocan sus accesos a carpetas y sistemas con datos de personas?",
+       r:"Incluye la revisión de accesos en el proceso de desvinculación y de cambio de cargo, con un responsable claro."},
+      {t:"¿Tienen definido qué hacer si se filtra, se pierde o se envía por error información de personas?",
+       r:"Define un procedimiento corto: a quién se avisa, cómo se contiene, cómo se informa a los afectados y cómo se documenta."}
+    ]
+  },
+  {
+    id:"gob", name:"Proveedores y gobierno",
+    desc:"Los terceros que manejan datos por ustedes y quién se hace cargo del tema.",
+    qs:[
+      {t:"¿Los contratos con proveedores que manejan datos de personas (remuneraciones, consultoras, plataformas) definen qué pueden hacer con ellos y cuándo eliminarlos?",
+       r:"Revisa los contratos con proveedores: finalidad, confidencialidad, medidas de seguridad, prohibición de usos distintos y eliminación al terminar el servicio."},
+      {t:"¿Hay una persona responsable del tema de protección de datos, o al menos un dueño claro dentro de la organización?",
+       r:"Designa un responsable. Sin dueño, el tema queda repartido entre RRHH, TI y legal, y nadie lo empuja."},
+      {t:"Si un trabajador o candidato pide ver, corregir o eliminar sus datos, ¿saben cómo responder y en qué plazo?",
+       r:"Prepara un procedimiento para atender solicitudes de acceso, rectificación y eliminación, con un canal definido y plazos de respuesta."},
+      {t:"¿El equipo que maneja datos de personas ha recibido capacitación sobre la nueva ley?",
+       r:"Capacita a quienes manejan datos en el día a día. La mayoría de las brechas nace en prácticas cotidianas, como reenviar un CV o compartir una planilla."}
+    ]
+  }
+];
+
+const OPTS = [{v:2,l:"Sí"},{v:1,l:"Parcialmente"},{v:0,l:"No"}];
+const form = document.getElementById('form');
+let total = 0;
+
+SECTIONS.forEach((s,si)=>{
+  const sec = document.createElement('div');
+  sec.className = 'section';
+  sec.innerHTML = `<h2>${si+1}. ${s.name}</h2><p class="section-desc">${s.desc}</p>`;
+  s.qs.forEach((q,qi)=>{
+    total++;
+    const name = `${s.id}_${qi}`;
+    const d = document.createElement('div');
+    d.className = 'q';
+    d.innerHTML = `<p>${q.t}</p><div class="opts">${OPTS.map(o=>`<label><input type="radio" name="${name}" value="${o.v}"><span>${o.l}</span></label>`).join('')}</div>`;
+    sec.appendChild(d);
+  });
+  form.appendChild(sec);
+});
+
+function answered(){ return form.querySelectorAll('input:checked').length; }
+form.addEventListener('change',()=>{
+  const n = answered();
+  document.getElementById('ptext').textContent = `${n} de ${total} respondidas`;
+  document.getElementById('pbar').style.width = (n/total*100)+'%';
+  document.getElementById('calc').disabled = n < total;
+});
+
+document.getElementById('calc').addEventListener('click',(e)=>{
+  e.preventDefault();
+  let score = 0, max = total*2;
+  const blocks = [], tips = [];
+  SECTIONS.forEach(s=>{
+    let bs = 0;
+    s.qs.forEach((q,qi)=>{
+      const v = +form.querySelector(`input[name="${s.id}_${qi}"]:checked`).value;
+      bs += v;
+      if(v<2) tips.push({sec:s.name,t:q.t,r:q.r,v});
+    });
+    score += bs;
+    blocks.push({name:s.name,pct:Math.round(bs/(s.qs.length*2)*100)});
+  });
+  const pct = Math.round(score/max*100);
+  let level, text;
+  if(pct>=80){level="Base sólida";text="Tu área tiene buenas prácticas instaladas. El trabajo ahora es documentarlas y cerrar las brechas puntuales que quedan.";}
+  else if(pct>=50){level="En camino, con brechas relevantes";text="Hay prácticas avanzadas, pero también puntos donde la información de personas queda expuesta. Conviene priorizar los ítems marcados como No.";}
+  else{level="Exposición alta";text="Buena parte del tratamiento de datos de personas funciona sin criterios definidos. Es un buen momento para partir por el inventario de datos y los accesos.";}
+
+  tips.sort((a,b)=>a.v-b.v);
+  const res = document.getElementById('result');
+  res.innerHTML = `
+    <div class="eyebrow">Tu resultado</div>
+    <div class="score">${pct}%<small> · ${score} de ${max} puntos</small></div>
+    <div class="level">${level}</div>
+    <p class="lead" style="font-size:16px">${text}</p>
+    <div class="blocks">${blocks.map(b=>`<div class="block"><div class="name">${b.name}</div><div class="val">${b.pct}%</div><div class="mini"><div style="width:${b.pct}%"></div></div></div>`).join('')}</div>
+    <div class="tips">
+      ${tips.length?`<h3>Por dónde partir</h3>`+tips.map(t=>`<div class="tip"><div class="tag">${t.sec} · ${t.v===0?'No':'Parcialmente'}</div><div class="t">${t.t}</div><div class="r">${t.r}</div></div>`).join(''):`<h3>Sin brechas declaradas</h3><p>Respondiste Sí en todo. El siguiente paso es poder demostrarlo: que cada práctica esté documentada y tenga un responsable.</p>`}
+    </div>
+    <div class="cta">
+      <h3>¿Quieres revisar tus procesos de selección y evaluación?</h3>
+      <p>En Labor HR ayudamos a ordenar cómo se recolectan, comparten y guardan los datos en reclutamiento, evaluaciones y gestión de personas. Escríbenos a <a href="mailto:contacto@laborhr.cl?subject=Autodiagnóstico Ley de Datos">contacto@laborhr.cl</a>.</p>
+    </div>
+    <div class="actions">
+      <button onclick="window.print()">Imprimir o guardar en PDF</button>
+      <button onclick="location.reload()">Volver a empezar</button>
+    </div>
+    <p class="note" style="margin-top:24px">Herramienta orientativa basada en la Ley 21.719. No reemplaza una revisión legal de tu organización.</p>
+  `;
+  res.style.display = 'block';
+  res.scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>
