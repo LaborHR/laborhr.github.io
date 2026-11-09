@@ -601,6 +601,25 @@ body {
   .logos-bar img[alt="Moreau"] { height: 30px; }
   .logos-bar img[alt="Mapei"] { height: 17px; }
 }
+
+/* ═══ VINCIT ═══ */
+.vincit-band { background: linear-gradient(135deg, #1E3A55, #142A3F); padding: clamp(48px, 8vw, 80px) clamp(24px, 5vw, 48px); }
+.vincit-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.vincit-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #B5CBE0; border: 1px solid rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 999px; margin-bottom: 18px; }
+.vincit-logo { height: 52px; display: block; margin-bottom: 8px; }
+.vincit-by { color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 18px; }
+.vincit-band h2 { color: #fff; font-size: clamp(24px, 3.4vw, 34px); font-weight: 700; line-height: 1.2; margin-bottom: 14px; }
+.vincit-band p { color: rgba(255,255,255,0.65); font-size: 16px; font-weight: 300; line-height: 1.75; margin-bottom: 24px; max-width: 560px; }
+.vincit-mods { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.vincit-mod { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 16px; }
+.vincit-mod b { display: block; color: #fff; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.vincit-mod span { color: rgba(255,255,255,0.55); font-size: 13px; font-weight: 300; line-height: 1.5; }
+.vincit-btn { display: inline-block; background: #fff; color: #162A3E; padding: 12px 26px; border-radius: 6px; font-weight: 600; font-size: 14px; text-decoration: none; }
+.vincit-btn:hover { background: #DFE3E8; }
+@media (max-width: 860px) { .vincit-inner { grid-template-columns: 1fr; } }
+/* Menú en una línea */
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1180px) and (min-width: 641px) { .nav-links { gap: 14px; } .nav-links a { font-size: 12px; } .nav-links .nav-cta { padding: 8px 14px; } }
 </style>
 </head>
 <body>
@@ -613,6 +632,7 @@ body {
   </button>
   <div class="nav-links">
     <a href="#servicios">Soluciones</a>
+    <a href="vincit.html">Vincit</a>
     <a href="#mineria">Minería</a>
     <a href="#clientes">Clientes</a>
     <a href="#director">Dirección</a>
@@ -658,6 +678,26 @@ body {
     </div>
   </div>
 </div>
+
+<!-- ═══ VINCIT ═══ -->
+<section class="vincit-band" id="vincit">
+  <div class="vincit-inner">
+    <div>
+      <span class="vincit-tag">Nuevo · Plataforma</span>
+      <img src="vincit-logo-blanco.png" alt="Vincit" class="vincit-logo">
+      <div class="vincit-by">by Labor HR</div>
+      <h2>Tu software de RRHH administra. Vincit desarrolla.</h2>
+      <p>Complementa a tu sistema de RRHH y profundiza en desarrollo organizacional: clima laboral, detección de necesidades de capacitación, descripciones de cargo y coaching en una sola plataforma, respaldada por nuestra consultoría.</p>
+      <a href="vincit.html" class="vincit-btn">Conoce Vincit</a>
+    </div>
+    <div class="vincit-mods">
+      <div class="vincit-mod"><b>Clima laboral</b><span>Encuestas anónimas y focos claros de dónde intervenir</span></div>
+      <div class="vincit-mod"><b>DNC y roadmap</b><span>Del levantamiento a un plan que se ejecuta</span></div>
+      <div class="vincit-mod"><b>Descripciones de cargo</b><span>Aprobadas y conocidas por cada trabajador</span></div>
+      <div class="vincit-mod"><b>Coaching</b><span>Seguimiento y trazabilidad de cada proceso</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- ═══ SERVICES ═══ -->
 <section class="section services" id="servicios">

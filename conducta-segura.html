@@ -129,7 +129,10 @@
             .content, .proceso, .entrevista, .cta-section { padding: 3rem 1.5rem; }
             .ejes { padding: 3rem 1.5rem; }
         }
-    </style>
+    /* Menú en una línea */
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1180px) and (min-width: 641px) { .nav-links { gap: 14px; } .nav-links a { font-size: 12px; } .nav-links .nav-cta { padding: 8px 14px; } }
+</style>
 </head>
 <body>
 
@@ -140,6 +143,7 @@
   </button>
   <div class="nav-links">
     <a href="/#servicios">Soluciones</a>
+    <a href="vincit.html">Vincit</a>
     <a href="/#mineria">Minería</a>
     <a href="/#clientes">Clientes</a>
     <a href="/#director">Dirección</a>

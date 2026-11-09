@@ -76,6 +76,9 @@ footer a{color:#919EAB;text-decoration:none}
 .footer-motto{color:#637381;font-style:italic}
 @media print{.nav,.progress,#form,button,.actions,footer{display:none!important}#result{display:block!important;border:none;margin:0;padding:0}.cta{background:none;color:var(--ink);border:1px solid var(--line)}.cta a{color:var(--navy)}}
 @media(max-width:640px){.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px 24px;gap:16px}.nav-links.open{display:flex}.nav-toggle{display:block}.opts label{min-width:0}}
+/* Menú en una línea */
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1180px) and (min-width: 641px) { .nav-links { gap: 14px; } .nav-links a { font-size: 12px; } .nav-links .nav-cta { padding: 8px 14px; } }
 </style>
 </head>
 <body>
@@ -87,6 +90,7 @@ footer a{color:#919EAB;text-decoration:none}
   </button>
   <div class="nav-links">
     <a href="/#servicios">Soluciones</a>
+    <a href="vincit.html">Vincit</a>
     <a href="/#mineria">Minería</a>
     <a href="/#clientes">Clientes</a>
     <a href="coaching-adc.html">Coaching ADC</a>
