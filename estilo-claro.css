@@ -97,3 +97,35 @@
   background: var(--cl-ribbon-soft) center bottom / 100% 100% no-repeat; opacity: .6; pointer-events: none;
 }
 .contact > * { position: relative; z-index: 1; }
+
+/* ─── Coaching ADC: "Proceso" en claro ─── */
+.proceso { background: var(--cl-bg) !important; color: var(--cl-ink) !important; }
+.proceso h2 { color: var(--cl-ink) !important; }
+.proceso .subtitle { color: var(--cl-gray) !important; }
+.proceso-step { background: #fff !important; border: 1px solid #E3E8EE !important; box-shadow: var(--cl-card-shadow); }
+.proceso-step h4 { color: var(--cl-navy) !important; }
+.proceso-step p { color: #637381 !important; }
+
+/* ─── Conducta Segura: "Ejes" en claro ─── */
+.ejes { background: var(--cl-bg) !important; color: var(--cl-ink) !important; }
+.ejes h2 { color: var(--cl-ink) !important; }
+.ejes .subtitle { color: var(--cl-gray) !important; }
+.eje-card { background: #fff !important; border: 1px solid #E3E8EE !important; box-shadow: var(--cl-card-shadow); }
+.eje-card h4 { color: var(--cl-navy) !important; }
+.eje-card p { color: #637381 !important; }
+
+/* ─── Portadas de páginas internas: título y texto ─── */
+.hero p, .page-hero .lead { color: var(--cl-gray) !important; }
+.hero-inner, .page-hero-inner { position: relative; z-index: 1; }
+
+/* ─── Autoevaluación DS44: encabezado claro ─── */
+.header { background: #fff !important; border-bottom: 1px solid #E3E8EE; }
+.header-logo { filter: none !important; }
+.header-sep { background: rgba(30,58,85,.2) !important; }
+.header-title { color: var(--cl-navy) !important; }
+.header-name { color: var(--cl-gray) !important; }
+.header-badge { background: #EEF3F8 !important; color: var(--cl-navy) !important; }
+
+/* ─── Portadas internas: espacio para que la cinta no tape el texto ─── */
+.page-hero, .hero:has(.hero-grid) { padding-bottom: clamp(120px, 13vw, 190px) !important; }
+.page-hero::after, .hero:has(.hero-grid)::after { height: clamp(80px, 10vw, 150px); }
